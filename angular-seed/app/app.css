@@ -1,5 +1,7 @@
 /* app css stylesheet */
-
+html,body{
+  background-color: #f5f8fa;
+}
 @font-face {
       font-family: 'fontello';
       src: url('./res/font/fontello.eot?22306947');
@@ -10,36 +12,6 @@
       font-weight: normal;
       font-style: normal;
     }
-
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
 
 .demo-icon
 {
@@ -75,4 +47,97 @@
  
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.navbar-default{
+  background-color: #3097d1;
+  border-color: #1c73a5;
+}
+.navbar-default .navbar-toggle{
+  background-color: #2d91ca;
+  border-color: #1c73a5;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: #2d91ca;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #2882b5;
+}
+.navbar-default .navbar-nav>li>a {
+  color: rgba(255, 255, 255, 0.8);
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>li>a:hover {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar {
+border-radius: 0px;
+}
+.navbar-form .form-control{
+  border-color: #1C73A5;
+}
+div.dropdown-toggle{
+  margin: 9px 0px;
+}
+@media (max-width: 768px){
+ .ba {
+    display: none;
+  } 
+}
+@media (max-width: 768px){
+ .bb {
+    margin-top: -1px;
+  } 
+}
+@media (min-width: 767px){
+ .bc {
+    display: none;
+  }
+}
+.welcome{
+  color: rgb(30, 57, 72);
+  padding: 10px 15px;
+  display: block;
+  font-weight: 600;
+} 
+@media (min-width: 767px){
+ .jumbotron {
+    font-family: 'Microsoft Yahei';
+  }
+}
+
+
+
+.jumbotron{
+  margin-top: -20px;
+  background-image: linear-gradient(to bottom,#333366 0,#666699 100%);
+  background-repeat: repeat-x;
+  color: #fff;
+  text-align: center;
+}
+.jumbotron .p{
+  font-weight: 300;
+  font-size: 24px;
+}
+.jumbotron h1{
+  margin-bottom: 30px;
+}
+.jumbotron span a{
+  color: #999;
+  font-size: 18px;
+}
+.jumbotron hr {
+  margin-top: 30px;
+  border-top: 1px solid #999;
+  width:100px;
+}
+.jumbotron ul{
+  text-align: center;
+}
+.jumbotron ul li{
+  display:inline;
+  padding: 10px;
 }
