@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html lang="zh-CN" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="zh-CN" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="zh-CN" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="zh-CN" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="zh-CN"  np-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,18 +21,57 @@
 </head>
 <body>
 
-  <div ng-controller="myController">
-    <brandbar></brandbar>
+<div class="container">
+  
+
+ <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"  ng-controller="myController">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="res/img/wen.jpg" alt="...">
+      <div class="carousel-caption">
+        wen
+      </div>
+    </div>
+    <div class="item">
+      <img src="res/img/wen2.jpg" alt="...">
+      <div class="carousel-caption">
+        wen2
+      </div>
+    </div>
+    <div class="item">
+      <img src="res/img/wen3.jpg" alt="...">
+      <div class="carousel-caption">
+        wen3
+      </div>
+    </div>    
   </div>
 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ng-view></div>
 
-  <div ng-include="src='res/tpl/foot.html'"></div>
+
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="res/jquery/jquery-1.11.3.min.js"></script>

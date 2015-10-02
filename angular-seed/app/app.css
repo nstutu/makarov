@@ -1,6 +1,11 @@
 /* app css stylesheet */
 html,body{
-  background-color: #f5f8fa;
+  /*background-color: #f5f8fa;*/
+}
+@media (min-width: 992px){
+ html,body {
+    font-family: 'Microsoft Yahei';
+  }
 }
 @font-face {
       font-family: 'fontello';
@@ -82,17 +87,17 @@ border-radius: 0px;
 div.dropdown-toggle{
   margin: 9px 0px;
 }
-@media (max-width: 768px){
+@media (max-width: 767px){
  .ba {
     display: none;
   } 
 }
-@media (max-width: 768px){
+@media (max-width: 767px){
  .bb {
     margin-top: -1px;
   } 
 }
-@media (min-width: 767px){
+@media (min-width: 768px){
  .bc {
     display: none;
   }
@@ -103,18 +108,13 @@ div.dropdown-toggle{
   display: block;
   font-weight: 600;
 } 
-@media (min-width: 767px){
- .jumbotron {
-    font-family: 'Microsoft Yahei';
-  }
-}
-
-
 
 .jumbotron{
   margin-top: -20px;
-  background-image: linear-gradient(to bottom,#333366 0,#666699 100%);
-  background-repeat: repeat-x;
+  /*background-image: linear-gradient(to bottom,#333366 0,#666699 100%);*/
+  /*background-repeat: repeat-x;*/
+  background-image: url('res/img/rbg3.png');
+  background-repeat: repeat;
   color: #fff;
   text-align: center;
 }
@@ -140,4 +140,51 @@ div.dropdown-toggle{
 .jumbotron ul li{
   display:inline;
   padding: 10px;
+}
+.jumbotron .container div{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.jumbotron .container div h5{
+  margin-top: 20px;
+  color: #666699;
+}
+.reg{
+  background-color: #eee;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+.reg .btn{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.ca{
+  background-color: #fff;
+  text-align: center;
+}
+.ca .row{
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+}
+.cb{
+  margin-top: -30px;
+  padding: 10px;
+}
+.footer{
+  border-top: 1px solid #ddd;
+  margin-top:150px;
+  padding:0px;
+  margin-bottom: 50px;
+}
+.footer .container{
+  /*background-color: #fff;*/
+  padding-top: 20px;
+}
+.footer .copyright{
+  text-align: center;
+  margin-top: 10px;
+}
+.footer strong{
+  color: #9999cc;
 }
