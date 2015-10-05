@@ -14,87 +14,135 @@
   <div class="container  cb">
     <form class="form-inline">
       <div class="form-group">
-          <input type="text" class="form-control" id="mailInput" placeholder="邮箱">
+          <input type="text" class="form-control input-lg" id="mailInput" placeholder="邮箱" ng-model="mailInput">
       </div>
       <div class="form-group">
-          <input type="password" class="form-control" id="pwdInput" placeholder="密码">   
+          <input type="text" class="form-control input-lg" id="nickInput" placeholder="昵称" ng-model="nickInput">
       </div>      
-      <button type="submit" class="btn btn-primary">注册</button>
+      <button  class="btn btn-primary btn-lg" ng-click="goreg()">注册</button>
+
     </form>
   </div>
 </div>
-<div class="container ca">
-	<div class="row">
-   <h1>多项目管理</h1> 
-   <div class="col-sm-4">
-     1
-   </div>
-   <div class="col-sm-4">
-     12
-   </div>
-         <div class="col-sm-4">
-     13
-   </div>
-  </div><hr>
-  <div class="row">
-   <h1>统一集中信息平台</h1>
-      <div class="col-sm-4">
-     1
-   </div>
-   <div class="col-sm-4">
-     12
-   </div>
-         <div class="col-sm-4">
-     13
-   </div>
-  </div><hr>
-    <div class="row">
-   <h1>快速计划编制调整</h1>
-      <div class="col-sm-4">
-     1
-   </div>
-   <div class="col-sm-4">
-     12
-   </div>
-         <div class="col-sm-4">
-     13
-   </div>
-  </div><hr>
-    <div class="row">
-    <h1>日常事务跟踪管</h1>
-       <div class="col-sm-4">
-     1
-   </div>
-   <div class="col-sm-4">
-     12
-   </div>
-         <div class="col-sm-4">
-     13
-   </div>
-  </div><hr>
-    <div class="row">
-    <h1>任务分发及反馈</h1>
-       <div class="col-sm-4">
-     1
-   </div>
-   <div class="col-sm-4">
-     12
-   </div>
-         <div class="col-sm-4">
-     13
-   </div>
-  </div><hr>
-    <div class="row">
-   <h1>多终端访问 无缝切换</h1>
-      <div class="col-sm-4">
-     1
-   </div>
-   <div class="col-sm-4">
-     12
-   </div>
-         <div class="col-sm-4">
-     13
-   </div>
+<div class="container-fluid ca">
+  <div class="container">
+   <div class="page-header"><h1>快速了解</h1></div>   
   </div>
+
+  <div class="row">
+    <div class="container">
+
+     <div class="col-sm-6">
+      <img src="res/img/wen.jpg" alt="" class="img-responsive img-rounded">
+    </div>
+    <div class="col-sm-6">
+
+      <h4 class="lead text-left">多项目管理</h4> 
+      <p class="text-justify">"项目太多，管不过来"? Makarov按多项目管理的特性设计，提高企业（组织）的并发项目处理能力，增加并行项目的运营数量，更好的实行扁平化管理。</p>
+
+
+    </div>
+  </div>  
+</div>
+<div class="row">
+  <div class="container">
+   <h1> </h1>
+   <div class="col-sm-6">
+    <img src="res/img/wen2.jpg" alt="" class="img-responsive img-rounded">
+  </div>
+  <div class="col-sm-6">
+
+    <h4 class="lead text-left">信息平台</h4> 
+    <p class="text-justify">"项目团队构成复杂，干系人众多"?集中、统一的项目信息平台，集中项目管理信息渠道，项目干系人共享统一信息平台</p>
+
+  </div>
+</div>  
+</div>
+<div class="row">
+  <div class="container">
+   <h1> </h1>
+   <div class="col-sm-6">
+    <img src="res/img/wen3.jpg" alt="" class="img-responsive img-rounded">
+  </div>
+  <div class="col-sm-6">
+
+    <h4 class="lead text-left">项目计划快速编制与调整</h4> 
+    <p class="text-justify">针对手机屏幕特别设计，即使在手机上也能轻松编辑和维护<a href="">横、纵计划</a>；特有的<a href="">计划缩放</a>、<a href="">计划移动</a>、<a href="">计划关联</a>功能让计划维护更加快捷；计划模板功能更可一键生成计划。</p>
+
+  </div>
+</div>  
+</div>
+<div class="row">
+  <div class="container">
+   <h1> </h1>
+   <div class="col-sm-6">
+    <img src="res/img/wen.jpg" alt="" class="img-responsive img-rounded">
+  </div>
+  <div class="col-sm-6">
+
+    <h4 class="lead text-left">事项管理</h4> 
+    <p class="text-justify">无论是阶段冲刺还是每周工作，我们都可以建立不同的<a href="">事项任务工作单</a>，针对各事项单进行任务下发、跟踪及<a href="">滚动</a>来实现对项目的推动及日常管控。</p>
+
+  </div>
+</div>  
+</div>
+<div class="row">
+  <div class="container">
+   <h1> </h1>
+   <div class="col-sm-6">
+    <img src="res/img/wen2.jpg" alt="" class="img-responsive img-rounded">
+  </div>
+  <div class="col-sm-6">
+
+    <h4 class="lead text-left">任务分发及反馈</h4> 
+    <p class="text-justify">给事项单中的任务项分配责任人，将任务分发出去。责任人完成任务后点击完成，同时可以上传照片、文档及评论。</p>
+
+  </div>
+</div>  
+</div>
+<div class="row">
+  <div class="container">
+   <h1> </h1>
+   <div class="col-sm-6">
+    <img src="res/img/wen3.jpg" alt="" class="img-responsive img-rounded">
+  </div>
+  <div class="col-sm-6">
+
+    <h4 class="lead text-left">多终端访问</h4> 
+    <p class="text-justify">支持手机（Android iOS）、平板（Android iOS）、电脑多终端访问。各终端间可无缝切换使用。</p>
+
+  </div>
+</div>  
+</div>
+<div class="cf">
+  <div class="container">
+   <div class="page-header"><h1>在线支持与商务</h1></div>   
+   <div class="col-sm-4">
+    <p class="text-justify"><strong>免费在线支持</strong></p>
+    <h5 class="text-justify">客服QQ：<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes"><img border="0" src="http://pub.idqqimg.com/wpa/images/counseling_style_52.png" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></h5>
+    <h5 class="text-justify">使用帮助：</h5>
+    <h5 class="text-justify">视频教程：</h5>
+  </div>
+  <div class="col-sm-4">
+    <p class="text-justify"><strong>现场培训</strong></p>
+    <h5 class="text-justify">培训内容：应用Makarov管理企业(组织)项目</h5>
+    <h5 class="text-justify">培训对象：项目干系人</h5>
+    <h5 class="text-justify">联系人：陈小宝 0755-86390159</h5>
+    <h5 class="text-justify">电话：0755-86390159</h5>
+  </div>
+  <div class="col-sm-4">
+    <p class="text-justify"><strong>咨询及服务</strong></p>
+    <h5 class="text-justify">Makarov企业版应用咨询</h5>
+    <h5 class="text-justify">Makarov企业版应用实施</h5>
+    <h5 class="text-justify">项目、商务合作</h5>
+    <h5 class="text-justify">电话：0755-86580159 </h5>
+    <h5 class="text-justify">QQ：888888 </h5>
+  </div>
+</div>  
+</div>
+
+
+
+
 </div>
 

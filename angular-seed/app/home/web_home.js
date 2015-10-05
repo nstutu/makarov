@@ -12,8 +12,14 @@ angular.module('myApp.home', [
   });
 }])
 
-.controller('homeCtrl',['$scope', function($scope) {
-	$scope.oo='abcaaaa';
+.controller('homeCtrl',['$scope','$log','$location', function($scope,$log,$location) {
+	$log.info('aaa');
+	$scope.goreg=function(){
+		var mail = $scope.mailInput;
+		var nick = $scope.nickInput;
+		var url = '/reg/'+mail+'/'+nick;
+		$location.url(url);
+	}
 }])
 .directive('myweb',['isLogin',function(isLogin){
 	var url='home/webhome.html';
