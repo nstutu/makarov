@@ -1,4 +1,36 @@
-<div class="container" ng-controller="regCtrl">
-	<p >{{mail}}</p>
-	<p>{{nick}}</p>
+<div class="container regContent" ng-controller="regCtrl">
+	<h1 class="text-center">注&nbsp;册</h1>
+	<form class="form form-group-lg da center-block">
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon"><span class="demo-icon">&#xe809;</span></div>
+				<input type="text" class="form-control" id="mailInput" placeholder="电子邮箱">
+			</div>
+			<div class="input-group">
+				<div class="input-group-addon"><span class="demo-icon">&#xe802;</span></div>
+				<input type="text" class="form-control" id="nickInput" placeholder="昵称">
+			</div>
+			<div class="input-group">
+				<div class="input-group-addon"><span class="demo-icon">&#xe8d7;</span></div>
+				<input type="password" class="form-control" id="pwdInput" placeholder="密码">
+			</div>	
+			<div class="input-group">
+				<div class="input-group-addon"><span class="demo-icon">&#xe8ac;</span></div>
+				<input type="text" class="form-control" id="phoneInput" placeholder="请输入手机号码">
+			</div>
+
+			<div class="input-group formLeft">
+				<div class="input-group-addon"><span class="demo-icon">&#xe819;</span></div>
+				<input type="text" class="form-control" id="phoneInput" placeholder="手机验证码">
+			</div>
+			<button type="button" class="btn btn-primary btn-lg formRight ">获取验证码</button>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" checked > 同意 <a href="">隐私条款</a> 和 <a href="">服务条款</a>
+				</label>
+			</div>
+			<button class="btn btn-primary btn-lg form-control">立即注册</button>
+			<a href="">已经注册？</a>
+		</div>
+	</form>
 </div>

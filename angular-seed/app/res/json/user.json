@@ -1,0 +1,21 @@
+[
+{
+	"nickname":"老马卡",
+	"mail":"linyzy@126.com",
+	"activation":"0",
+	"phone":"13510138658",
+	"id":"u1",
+	"password":"123",
+	"img":"res/img/tx.jpg"
+},
+{
+	"nickname":"恶魔猎手",
+	"mail":"gm@msn.com",
+	"activation":"0",
+	"phone":"13510138658",
+	"id":"u2",
+	"password":"123",
+	"img":"res/img/tx.jpg"
+}
+
+]

@@ -20,9 +20,6 @@ angular.module('myApp.home', [
 		$location.url(url);
 	}
 }])
-.controller('appCtrl', ['$scope', function($scope){
-	
-}])
 .directive('myweb',['isLogin',function(isLogin){
 	var url='home/webhome.html';
 	if(isLogin){
@@ -32,16 +29,5 @@ angular.module('myApp.home', [
 		restrict:'E',
 		templateUrl:url,
 	};
-}])
-.directive('mynav',function(){
-	return {
-		restrict:'E',
-		templateUrl:'home/nav.html',
-		link:link
-	}
-	function link(scope,element,attr){
-		scope.projname='goodproj';
-	}
-})
-;
+}]);
 

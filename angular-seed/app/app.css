@@ -59,8 +59,8 @@ html,body{
   border-color: #1c73a5;
 }
 .navbar-default .navbar-toggle{
-  background-color: #2d91ca;
-  border-color: #1c73a5;
+  background-color: #3097d1;
+  border-color: #3097d1;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #fff;
@@ -74,7 +74,7 @@ html,body{
 .navbar-default .navbar-nav>li>a {
   color: rgba(255, 255, 255, 0.8);
 }
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>li>a:hover {
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
   color: #fff;
   background-color: transparent;
 }
@@ -245,4 +245,56 @@ div.dropdown-toggle{
 .footer a{
   color: rgba(255, 255, 255, 0.8);
 }
+.regContent{
+  margin-top: 50px;
+  margin-bottom: 300px;
+  text-align: center;
+}
+.regContent h1{
+  margin-bottom: 50px;
+  -webkit-font-smoothing:antialiased;
+}
 
+.regContent .input-group{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px){
+  .regContent .da{
+    width:400px;
+  }
+}
+.regContent .form-control{
+  font-size: 14px;
+}
+.regContent .input-group-addon{
+  background-color: #fff;
+  padding: 3px 12px;
+  font-size: 18px;
+}
+.regContent .formLeft{
+  float:left;
+  width:60%;
+  margin-top: 0px;
+}
+.regContent .formRight{
+  float: right;
+  width:35%;
+  
+}
+.regContent .checkCode{
+  height: 46px;
+  background-color: #cde;
+}
+.regContent .btn{
+    /*margin-top: 20px;*/
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+.regContent .btn-lg{
+  padding: 13px 16px;
+}
+.regContent .checkbox{
+  clear: both;
+}

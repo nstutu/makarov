@@ -13,9 +13,9 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
 }])
 .controller('myController', ['$scope','$window','$location', function($scope,$window,$location){
-	$scope.wo=function(){
-		$window.alert($window.innerWidth);
-		$window.alert(localStorage.a);
+	$scope.hidemenu=function(){
+		angular.element($('#bs-example-navbar-collapse-1')).collapse('hide');
+		console.log('aaaaaaa');
 	};
 	var uu='/view2';
 	// $location.path(uu);
