@@ -2,7 +2,8 @@
 
 angular.module('myApp.home', [
 	'ngRoute',
-	'myApp.user'
+	'myApp.user',
+	'myApp.project',
 	])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -11,7 +12,17 @@ angular.module('myApp.home', [
     controller: 'homeCtrl'
   });
 }])
-
+.controller('appCtrl', ['$scope','getProjList','$q','$rootScope', function($scope,getProjList,$q,$rootScope){
+	var deferred = $q.defer();
+	var promise = deferred.promise;
+	var proj;
+	promise.then(function(value){
+		console.log(value);
+		$scope.proj=value;
+	});
+	deferred.resolve(getProjList);
+	// $rootScope.$apply();
+}])
 .controller('homeCtrl',['$scope','$log','$location', function($scope,$log,$location) {
 	$scope.goreg=function(){
 		var mail = $scope.mailInput;
@@ -19,9 +30,6 @@ angular.module('myApp.home', [
 		var url = '/reg/'+mail+'/'+nick;
 		$location.url(url);
 	}
-}])
-.controller('appCtrl', ['$scope', function($scope){
-	
 }])
 .directive('myweb',['isLogin',function(isLogin){
 	var url='home/webhome.html';
