@@ -12,16 +12,8 @@ angular.module('myApp.home', [
     controller: 'homeCtrl'
   });
 }])
-.controller('appCtrl', ['$scope','getProjList','$q','$rootScope', function($scope,getProjList,$q,$rootScope){
-	var deferred = $q.defer();
-	var promise = deferred.promise;
-	var proj;
-	promise.then(function(value){
-		console.log(value);
-		$scope.proj=value;
-	});
-	deferred.resolve(getProjList);
-	// $rootScope.$apply();
+.controller('appCtrl', ['$scope', function($scope){
+
 }])
 .controller('homeCtrl',['$scope','$log','$location', function($scope,$log,$location) {
 	$scope.goreg=function(){
@@ -41,15 +33,17 @@ angular.module('myApp.home', [
 		templateUrl:url,
 	};
 }])
-.directive('mynav',function(){
+.directive('mynav',['$http',function($http){
 	return {
 		restrict:'E',
 		templateUrl:'home/nav.html',
 		link:link
 	}
 	function link(scope,element,attr){
-		scope.projname='goodproj';
+		$http.get('res/json/proj.json').success(function(data){
+			scope.projects=data;
+		});		
 	}
-})
+}])
 ;
 

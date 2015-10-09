@@ -1,9 +1,17 @@
 'use strict';
 
 angular.module('myApp.project', [])
-.factory('getProjList', ['$http', function($http){
-	// $http.get('res/json/proj.json').success(function(data){
-	// 	return data;
-	// });
+.factory('getProjList', ['$http','$q','$rootScope', function($http,$q,$rootScope){
+	var deferred = $q.defer();
+	var promise = deferred.promise;
+	var proj;
+	promise.then(function(value){
+		proj=value;
+
+	});
+
+
+	$q.resolve($http.get('res/json/proj.json'));
+
 	return '123';
 }]);
