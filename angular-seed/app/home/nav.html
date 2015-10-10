@@ -3,13 +3,40 @@
 		<ol class="breadcrumb">
 			<li><a href="#/home"><span class="demo-icon">&#xe800;</span>Home</a></li>
 			<li>
-				<!-- 这里搞成GITHUB的那种按钮的。可以SEARCH -->
-				<select>
-					<option value="0">全部项目</option>
-					<option ng-repeat="proj in projects" value="{{proj.id}}">{{proj.name}}</option>
-				</select>
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle btn-sm" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						项目：{{curProj}}
+						<span class="caret"></span>
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<p>切换项目</p>
+						<form role="search" ><input type="text" class="form-control"></form>
+						<p ng-repeat="proj in projects"><a href="" ng-click="changeProj('{{proj.id}}')">{{proj.name}}</a></p>
+					</div>
+				</div>
 			</li>
-			<li class="active"></li>
-		</ol>		
+		</ol>	
+		<div class="t" >
+			{{tt}}
+			<nav>
+				<ul class="pagination">
+					<li>
+						<a href="#" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<li><a href="" ng-click="gettt(1)">1</a></li>
+					<li><a href="" ng-click="gettt(2)">2</a></li>
+					<li><a href="" ng-click="gettt(3)">3</a></li>
+					<li><a href="" ng-click="gettt(4)">4</a></li>
+					<li><a href="" ng-click="gettt(5)">5</a></li>
+					<li>
+						<a href="#" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>	
 	</div>
 </div>

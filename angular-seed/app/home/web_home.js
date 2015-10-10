@@ -13,7 +13,10 @@ angular.module('myApp.home', [
   });
 }])
 .controller('appCtrl', ['$scope', function($scope){
-
+	$scope.curProj="全部项目";
+	$scope.gettt=function(value){
+		$scope.tt=value;
+	};
 }])
 .controller('homeCtrl',['$scope','$log','$location', function($scope,$log,$location) {
 	$scope.goreg=function(){

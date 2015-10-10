@@ -57,7 +57,7 @@ angular.module('myApp.user', ['ngRoute'])
 }])
 .factory('myreload', ['$window', function($window){
 	return function (){
-		$window.location='http://192.168.1.105:8000/app/index.html';
+		$window.location='http://192.168.1.107:8000/app/index.html';
 		$window.location.href();
 	};
 }])

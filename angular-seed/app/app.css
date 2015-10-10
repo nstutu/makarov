@@ -1,6 +1,7 @@
 /* app css stylesheet */
 html,body{
   /*background-color: #f5f8fa;*/
+  color:#666666;
 }
 @media (min-width: 992px){
  html,body {
@@ -288,7 +289,6 @@ div.dropdown-toggle{
   background-color: #cde;
 }
 .regContent .btn{
-    /*margin-top: 20px;*/
   margin-bottom: 20px;
   font-size: 14px;
 }
@@ -298,5 +298,86 @@ div.dropdown-toggle{
 .regContent .checkbox{
   clear: both;
 }
-
-
+.mynav .t{
+  width:300px;
+  height: 100px;
+  overflow-y:scroll;
+}
+.mynav .breadcrumb li .dropdown{
+  display: inline-block;
+}
+.mynav .dropdown .dropdown-menu form{
+  padding: 5px 10px;
+}
+.mynav .dropdown .dropdown-menu{
+  width:200px;
+  background-color: #f5f5f5;
+  font-size: 12px;
+  border-radius: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.mynav .dropdown .dropdown-menu .form-control{
+  font-size: 12px;
+  padding: 3px 6px;
+}
+.mynav .dropdown .dropdown-menu p:first-child{
+  padding: 5px 10px 5px 10px;
+  text-align: left;
+  border-bottom: 1px solid #d5d5d5;
+  margin-bottom: 0px;
+  background: inherit;
+}
+.mynav .dropdown .dropdown-menu ul{
+  display: block;
+}
+.mynav .dropdown .dropdown-menu p{
+  margin-bottom: 0px;
+  background: #fff;
+}
+.mynav .dropdown .dropdown-menu p a{
+  display: list-item;
+  padding: 3px 10px;
+  text-overflow:ellipsis;
+  overflow: hidden;
+  text-decoration:none;
+  color:inherit;
+}
+.mynav .dropdown .dropdown-menu p a:hover{
+  background-color: #4078c0;
+  color: #fff;
+}
+.btn-default:active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default.focus {
+  color: #337ab7;
+  background-color: #eee;
+  border-color: #dcdcdc;
+}
+.btn-default {
+  color: #337ab7;
+}
+.btn-default:focus,
+.btn-default.focus {
+  color: #337ab7;
+  background-color: #eee;
+  border-color: #dcdcdc;
+}
+.btn-default:hover {
+  color: #337ab7;
+  background-color: #eee;
+  border-color: #dcdcdc;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: #337ab7;
+  background-color: #eee;
+  border-color: #dcdcdc;
+}
