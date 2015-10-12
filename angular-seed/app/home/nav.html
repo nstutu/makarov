@@ -11,32 +11,28 @@
 					<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
 						<p>切换项目</p>
 						<form role="search" ><input type="text" class="form-control"></form>
-						<p ng-repeat="proj in projects"><a href="" ng-click="changeProj('{{proj.id}}')">{{proj.name}}</a></p>
+						<form >
+						<uib-tabset>
+							<uib-tab heading="活动">
+								<p ng-repeat="proj in projects"><a href="" ng-click="changeProj('{{proj.id}}')">{{proj.name}}</a></p>
+							</uib-tab>
+							<uib-tab heading="存档">
+								<p><a href="">归档项目1</a></p>
+								<p><a href="">归档项目2</a></p>
+							</uib-tab>
+						</uib-tabset>
+						<div ng-switch="pager">
+							<uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="false" rotate="true" num-pages="numPages" previous-text="&lsaquo;" next-text="&rsaquo;" ng-switch-when="1">
+							</uib-pagination>
+						</div>												
+						</form>
 					</div>
 				</div>
 			</li>
 		</ol>	
-		<div class="t" >
+		<div >
 			{{tt}}
-			<nav>
-				<ul class="pagination">
-					<li>
-						<a href="#" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>
-					<li><a href="" ng-click="gettt(1)">1</a></li>
-					<li><a href="" ng-click="gettt(2)">2</a></li>
-					<li><a href="" ng-click="gettt(3)">3</a></li>
-					<li><a href="" ng-click="gettt(4)">4</a></li>
-					<li><a href="" ng-click="gettt(5)">5</a></li>
-					<li>
-						<a href="#" aria-label="Next">
-							<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
+
 		</div>	
 	</div>
 </div>

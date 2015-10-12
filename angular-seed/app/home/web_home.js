@@ -4,6 +4,7 @@ angular.module('myApp.home', [
 	'ngRoute',
 	'myApp.user',
 	'myApp.project',
+	'ui.bootstrap',
 	])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -14,6 +15,9 @@ angular.module('myApp.home', [
 }])
 .controller('appCtrl', ['$scope', function($scope){
 	$scope.curProj="全部项目";
+	$scope.maxSize = 3;
+	$scope.bigTotalItems = 175;
+	$scope.bigCurrentPage = 1;
 	$scope.gettt=function(value){
 		$scope.tt=value;
 	};
@@ -36,7 +40,7 @@ angular.module('myApp.home', [
 		templateUrl:url,
 	};
 }])
-.directive('mynav',['$http',function($http){
+.directive('mynav',['$http','calcPager',function($http,calcPager){
 	return {
 		restrict:'E',
 		templateUrl:'home/nav.html',
@@ -45,8 +49,14 @@ angular.module('myApp.home', [
 	function link(scope,element,attr){
 		$http.get('res/json/proj.json').success(function(data){
 			scope.projects=data;
+			scope.pager=calcPager(data,'act');
 		});		
 	}
 }])
+.factory('calcPager', function(){
+	return function (data,type){
+		return 1;
+	};
+})
 ;
 

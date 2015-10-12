@@ -307,7 +307,12 @@ div.dropdown-toggle{
   display: inline-block;
 }
 .mynav .dropdown .dropdown-menu form{
-  padding: 5px 10px;
+  padding: 5px 10px 0px;
+  text-align: center;
+}
+.mynav .dropdown .dropdown-menu .tab-content{
+  background: #fff;
+  margin-bottom: 5px;
 }
 .mynav .dropdown .dropdown-menu{
   width:200px;
@@ -317,24 +322,31 @@ div.dropdown-toggle{
   padding-bottom: 0px;
   padding-top: 0px;
 }
+.mynav .dropdown .dropdown-menu .pagination{
+  display: inline-block;
+  margin: 0px; 
+}
 .mynav .dropdown .dropdown-menu .form-control{
   font-size: 12px;
   padding: 3px 6px;
 }
-.mynav .dropdown .dropdown-menu p:first-child{
-  padding: 5px 10px 5px 10px;
+.mynav .dropdown .dropdown-menu>p{
+  padding: 5px 10px;
+  border-bottom:1px solid #dcdcdc; 
+}
+.mynav .dropdown .dropdown-menu .tab-pane p{
+  padding: 0px 0px;
+  margin: 0px;
   text-align: left;
-  border-bottom: 1px solid #d5d5d5;
-  margin-bottom: 0px;
-  background: inherit;
+  background: #fff;
 }
 .mynav .dropdown .dropdown-menu ul{
   display: block;
 }
-.mynav .dropdown .dropdown-menu p{
+/*.mynav .dropdown .dropdown-menu p{
   margin-bottom: 0px;
   background: #fff;
-}
+}*/
 .mynav .dropdown .dropdown-menu p a{
   display: list-item;
   padding: 3px 10px;
