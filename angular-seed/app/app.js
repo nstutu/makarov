@@ -7,22 +7,24 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.home',
-
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
 }])
-.controller('myController', ['$scope','$window','$location', function($scope,$window,$location){
-	$scope.hidemenu=function(){
-		angular.element($('#bs-example-navbar-collapse-1')).collapse('hide');
-		console.log('aaaaaaa');
-	};
-	var uu='/view2';
-	// $location.path(uu);
+.controller('myController', 
+	['$scope',
+	'$window',
+	'$location', 
+	function($scope,$window,$location){
+		$scope.hidemenu=function(){
+			angular.element($('#bs-example-navbar-collapse-1')).collapse('hide');
+			console.log('aaaaaaa');
+		};
+
 }])
-.directive('brandbar',['isLogin',function(isLogin){
+.directive('brandbar',['$rootScope',function($rootScope){
 	var url='user/notlogin.html';
-	if(isLogin){
+	if($rootScope.islogin){
 		url='user/login.html';
 	}
 	return {
@@ -30,5 +32,11 @@ config(['$routeProvider', function($routeProvider) {
 		templateUrl:url,
 		replace:true,
 	};
-}]);
+}])
+.run(function($rootScope,isLogin){
+	$rootScope.islogin=isLogin.info;
+	if(isLogin.info){
+		$rootScope.nickname=isLogin.data.nickname;
+	}
+});
 

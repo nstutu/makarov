@@ -16,11 +16,8 @@ angular.module('myApp.home', [
 .controller('appCtrl', ['$scope', function($scope){
 	$scope.curProj="全部项目";
 	$scope.maxSize = 3;
-	$scope.bigTotalItems = 175;
 	$scope.bigCurrentPage = 1;
-	$scope.gettt=function(value){
-		$scope.tt=value;
-	};
+	$scope.itemPerPage=10;
 }])
 .controller('homeCtrl',['$scope','$log','$location', function($scope,$log,$location) {
 	$scope.goreg=function(){
@@ -30,9 +27,9 @@ angular.module('myApp.home', [
 		$location.url(url);
 	}
 }])
-.directive('myweb',['isLogin',function(isLogin){
+.directive('myweb',['$rootScope',function($rootScope){
 	var url='home/webhome.html';
-	if(isLogin){
+	if($rootScope.islogin){
 		url='home/apphome.html';
 	}	
 	return {
@@ -40,7 +37,7 @@ angular.module('myApp.home', [
 		templateUrl:url,
 	};
 }])
-.directive('mynav',['$http','calcPager',function($http,calcPager){
+.directive('mynav',['$http',function($http){
 	return {
 		restrict:'E',
 		templateUrl:'home/nav.html',
@@ -48,15 +45,20 @@ angular.module('myApp.home', [
 	}
 	function link(scope,element,attr){
 		$http.get('res/json/proj.json').success(function(data){
-			scope.projects=data;
-			scope.pager=calcPager(data,'act');
+			scope.bigTotalItems = data.length;
+			if(scope.bigTotalItems>scope.itemPerPage){
+				scope.showpager=1;
+				scope.projects=data.slice(0,10);
+			}else{
+				scope.showpager=0;
+				scope.projects=data;
+			}
+			
+			scope.pageChanged = function() {
+				scope.projects=data.slice(scope.bigCurrentPage*10-10,scope.bigCurrentPage*10);
+  			};
 		});		
 	}
 }])
-.factory('calcPager', function(){
-	return function (data,type){
-		return 1;
-	};
-})
 ;
 

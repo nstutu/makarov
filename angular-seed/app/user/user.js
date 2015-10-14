@@ -39,9 +39,11 @@ angular.module('myApp.user', ['ngRoute'])
 	myreload();
 }])
 .factory('isLogin',  function(){
-	var result = false;
+	var result = new Object;
+	result.info = false;
 	if (localStorage.a && localStorage.a== 'ddddd' ){
-		result = true;
+		result.info = true;
+		result.data = {"nickname":"老马卡"};
 	}
 	return result;
 })
@@ -57,7 +59,7 @@ angular.module('myApp.user', ['ngRoute'])
 }])
 .factory('myreload', ['$window', function($window){
 	return function (){
-		$window.location='http://192.168.1.104:8000/app/index.html';
+		$window.location='http://192.168.1.113:8000/app/index.html';
 		$window.location.href();
 	};
 }])

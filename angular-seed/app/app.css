@@ -1,6 +1,6 @@
 /* app css stylesheet */
 html,body{
-  /*background-color: #f5f8fa;*/
+  background-color: #f5f8fa;
   color:#666666;
 }
 @media (min-width: 992px){
@@ -298,13 +298,9 @@ div.dropdown-toggle{
 .regContent .checkbox{
   clear: both;
 }
-.mynav .t{
-  width:300px;
-  height: 100px;
-  overflow-y:scroll;
-}
-.mynav .breadcrumb li .dropdown{
-  display: inline-block;
+.mynav .container .row{
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .mynav .dropdown .dropdown-menu form{
   padding: 5px 10px 0px;
@@ -332,7 +328,10 @@ div.dropdown-toggle{
 }
 .mynav .dropdown .dropdown-menu>p{
   padding: 5px 10px;
-  border-bottom:1px solid #dcdcdc; 
+  border-bottom:1px solid #dcdcdc;
+}
+.mynav .dropdown .dropdown-menu .close{
+  line-height: 0.8;
 }
 .mynav .dropdown .dropdown-menu .tab-pane p{
   padding: 0px 0px;
@@ -343,10 +342,7 @@ div.dropdown-toggle{
 .mynav .dropdown .dropdown-menu ul{
   display: block;
 }
-/*.mynav .dropdown .dropdown-menu p{
-  margin-bottom: 0px;
-  background: #fff;
-}*/
+
 .mynav .dropdown .dropdown-menu p a{
   display: list-item;
   padding: 3px 10px;
@@ -393,3 +389,23 @@ div.dropdown-toggle{
   background-color: #eee;
   border-color: #dcdcdc;
 }
+.appmain{
+  margin-top: 20px;
+}
+.appmain .row .panel .panel-heading{
+  background-color: #fff;
+  padding: 0px;
+}
+.appmain .panel .db{
+  height: 150px;
+  background-image: url('res/img/txbg.jpg');
+  background-size: cover;
+}
+.appmain .row .panel .panel-body .img-circle{
+    border: 3px solid #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 100px;
+    margin-top: -60px;
+}
+

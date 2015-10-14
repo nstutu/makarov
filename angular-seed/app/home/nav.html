@@ -1,38 +1,36 @@
 <div class="mynav">
 	<div class="container">
-		<ol class="breadcrumb">
-			<li><a href="#/home"><span class="demo-icon">&#xe800;</span>Home</a></li>
-			<li>
-				<div class="dropdown">
-					<button class="btn btn-default dropdown-toggle btn-sm" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						项目：{{curProj}}
-						<span class="caret"></span>
-					</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-						<p>切换项目</p>
-						<form role="search" ><input type="text" class="form-control"></form>
-						<form >
+		<div class="row">
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle btn-sm" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					项目：{{curProj}}
+					<span class="caret"></span>
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<p>切换项目<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+					<form role="search" ><input type="text" class="form-control"></form>
+					<form >
 						<uib-tabset>
 							<uib-tab heading="活动">
-								<p ng-repeat="proj in projects"><a href="" ng-click="changeProj('{{proj.id}}')">{{proj.name}}</a></p>
+								<p ng-repeat="proj in projects"><a href="" ng-click="changeProj('{{proj.id}}')">{{proj.name}}</a>
+								</p>
 							</uib-tab>
 							<uib-tab heading="存档">
 								<p><a href="">归档项目1</a></p>
 								<p><a href="">归档项目2</a></p>
 							</uib-tab>
 						</uib-tabset>
-						<div ng-switch="pager">
-							<uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="false" rotate="true" num-pages="numPages" previous-text="&lsaquo;" next-text="&rsaquo;" ng-switch-when="1">
+						<div ng-show="showpager" >
+							<uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize"  boundary-links="false" rotate="true" num-pages="numPages" previous-text="&lsaquo;" next-text="&rsaquo;" item-per-page="{{itemPerPage}}" ng-change="pageChanged()">
 							</uib-pagination>
 						</div>												
-						</form>
-					</div>
-				</div>
-			</li>
-		</ol>	
-		<div >
-			{{tt}}
+					</form>
+				</div><!--dropdown menu-->
+			</div><!--dropdown-->
+		</div><!--row-->
 
-		</div>	
-	</div>
-</div>
+
+
+
+</div><!--container-->
+</div><!--mynav-->
