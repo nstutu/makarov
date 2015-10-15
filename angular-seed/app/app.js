@@ -37,6 +37,7 @@ config(['$routeProvider', function($routeProvider) {
 	$rootScope.islogin=isLogin.info;
 	if(isLogin.info){
 		$rootScope.nickname=isLogin.data.nickname;
+		$rootScope.regdate=isLogin.data.regdate;
 	}
 });
 

@@ -43,7 +43,7 @@ angular.module('myApp.user', ['ngRoute'])
 	result.info = false;
 	if (localStorage.a && localStorage.a== 'ddddd' ){
 		result.info = true;
-		result.data = {"nickname":"老马卡"};
+		result.data = {"nickname":"老马卡","regdate":"2015-10-1"};
 	}
 	return result;
 })
@@ -59,7 +59,7 @@ angular.module('myApp.user', ['ngRoute'])
 }])
 .factory('myreload', ['$window', function($window){
 	return function (){
-		$window.location='http://192.168.1.113:8000/app/index.html';
+		$window.location='http://192.168.1.108:8000/app/index.html';
 		$window.location.href();
 	};
 }])

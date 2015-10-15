@@ -12,12 +12,12 @@
 					<form >
 						<uib-tabset>
 							<uib-tab heading="活动">
-								<p ng-repeat="proj in projects"><a href="" ng-click="changeProj('{{proj.id}}')">{{proj.name}}</a>
-								</p>
+								<div ng-repeat="proj in projects"><a href="" ng-click="changeProj('{{proj.id}}')">{{proj.name}}</a>
+								</div>
 							</uib-tab>
 							<uib-tab heading="存档">
-								<p><a href="">归档项目1</a></p>
-								<p><a href="">归档项目2</a></p>
+								<div><a href="">归档项目1</a></div>
+								<div><a href="">归档项目2</a></div>
 							</uib-tab>
 						</uib-tabset>
 						<div ng-show="showpager" >

@@ -333,26 +333,21 @@ div.dropdown-toggle{
 .mynav .dropdown .dropdown-menu .close{
   line-height: 0.8;
 }
-.mynav .dropdown .dropdown-menu .tab-pane p{
-  padding: 0px 0px;
+.mynav .dropdown .dropdown-menu .tab-pane div{
+  padding: 5px 0px;
   margin: 0px;
   text-align: left;
   background: #fff;
 }
-.mynav .dropdown .dropdown-menu ul{
-  display: block;
+.mynav .dropdown .dropdown-menu .tab-pane div a{
+  text-decoration: none;
+  color: inherit;
 }
-
-.mynav .dropdown .dropdown-menu p a{
-  display: list-item;
-  padding: 3px 10px;
-  text-overflow:ellipsis;
-  overflow: hidden;
-  text-decoration:none;
-  color:inherit;
-}
-.mynav .dropdown .dropdown-menu p a:hover{
+.mynav .dropdown .dropdown-menu .tab-pane div:hover{
   background-color: #4078c0;
+  color: #fff;
+}
+.mynav .dropdown .dropdown-menu .tab-pane div:hover a{
   color: #fff;
 }
 .btn-default:active:hover,
@@ -407,5 +402,6 @@ div.dropdown-toggle{
     width: 100px;
     height: 100px;
     margin-top: -60px;
+    margin-bottom: 10px;
 }
 
