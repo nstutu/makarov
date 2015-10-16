@@ -8,15 +8,16 @@
   				</div>
   				<div class="panel-body">
   					<img src="res/img/tx.jpg" alt="" class="center-block img-circle" >
-  					<p>{{nickname}}</p>
+  					<h3 class="text-center">{{nickname}}</h3>
+  					<p class="text-center">{{regdate}} 注册</p>
   				</div>
   			</div>
   		</div>
   		<div class="col-md-5">
-  			<div class="panel panel-default">
+  			<div class="panel panel-default" ng-controller="issueCtrl">
   				<div class="panel-heading">事项|事项单</div>
   				<div class="panel-body">
-  					Panel content
+  					{{abc}}
   				</div>
   			</div>
   			<div class="panel panel-default">

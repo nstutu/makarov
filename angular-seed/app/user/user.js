@@ -43,7 +43,7 @@ angular.module('myApp.user', ['ngRoute'])
 	result.info = false;
 	if (localStorage.a && localStorage.a== 'ddddd' ){
 		result.info = true;
-		result.data = {"nickname":"老马卡"};
+		result.data = {"nickname":"老马卡","regdate":"2015-10-1"};
 	}
 	return result;
 })

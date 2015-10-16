@@ -7,6 +7,7 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.home',
+  'myApp.issue',
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
@@ -37,6 +38,7 @@ config(['$routeProvider', function($routeProvider) {
 	$rootScope.islogin=isLogin.info;
 	if(isLogin.info){
 		$rootScope.nickname=isLogin.data.nickname;
+		$rootScope.regdate=isLogin.data.regdate;
 	}
 });
 
