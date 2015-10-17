@@ -1,7 +1,7 @@
 /* app css stylesheet */
 html,body{
   background-color: #f5f8fa;
-  color:#666666;
+  color:#444444;
 }
 @media (min-width: 992px){
  html,body {
@@ -396,7 +396,7 @@ div.dropdown-toggle{
   background-image: url('res/img/txbg.jpg');
   background-size: cover;
 }
-.appmain .row .panel .panel-body .img-circle{
+.appmain .row .col-md-3 .panel .panel-body .img-circle{
     border: 3px solid #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     width: 100px;
@@ -404,4 +404,26 @@ div.dropdown-toggle{
     margin-top: -60px;
     margin-bottom: 10px;
 }
-
+.appmain .row .col-md-5 .panel-heading{
+  padding: 12px 15px;
+}
+.card-issue{
+  position: relative;
+}
+.card-issue .card-icon{
+  width:32px;
+  height: 32px;
+}
+.card-issue div{
+  font-size: 12px;
+}
+.card-issue .l-t{
+  position: absolute;
+  top:0px;
+  left: 47px;
+}
+.card-issue .r-t{
+  position: absolute;
+  top:0px;
+  right: 0px;
+}
