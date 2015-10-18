@@ -18,6 +18,30 @@ angular.module('myApp.home', [
 	$scope.maxSize = 3;
 	$scope.bigCurrentPage = 1;
 	$scope.itemPerPage=10;
+	$scope.issueShow=true;
+	$scope.planShow=true;
+	$scope.toggleIssue=function(type){
+		if (type=='issue'){
+			$scope.issueShow=true;
+			angular.element($('button.btn-issue')).addClass('active');	
+			angular.element($('button.btn-sheet')).removeClass('active');	
+		}
+		if (type=='sheet'){
+			$scope.issueShow=false;	
+			angular.element($('button.btn-sheet')).addClass('active');	
+			angular.element($('button.btn-issue')).removeClass('active');				
+		}
+		if (type=='plan'){
+			$scope.planShow=true;	
+			angular.element($('button.btn-plan')).addClass('active');	
+			angular.element($('button.btn-mile')).removeClass('active');				
+		}	
+		if (type=='mile'){
+			$scope.planShow=false;	
+			angular.element($('button.btn-mile')).addClass('active');	
+			angular.element($('button.btn-plan')).removeClass('active');				
+		}			
+	}
 }])
 .controller('homeCtrl',['$scope','$log','$location', function($scope,$log,$location) {
 	$scope.goreg=function(){

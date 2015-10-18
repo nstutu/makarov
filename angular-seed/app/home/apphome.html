@@ -15,29 +15,167 @@
   		</div>
   		<div class="col-md-5">
   			<div class="panel panel-default" ng-controller="issueCtrl">
-  				<div class="panel-heading dd">事项|事项单</div>
+  				<div class="panel-heading dd">
+            <button class="btn btn-xs btn-info active btn-issue" ng-click="toggleIssue('issue')">事项</button>
+            <button class="btn btn-xs btn-info btn-sheet" ng-click="toggleIssue('sheet')">事项单</button>
+          </div>
   				<div class="panel-body">
-  					<div class="card-issue">
-  						<table>
-  							<tr>
-  								<td rowspan="2" class="card-l">
-  									<img class="card-icon img-responsive img-circle" src="res/img/projtx.jpg" alt="">
-  								</td>
-  								<td class="card-m text-muted">这里是事项单的名字</td>
-  								<td class="card-r text-muted">老马卡</td>
-  							</tr>
-  							<tr>
-  								<td class="card-m l-d">网络游戏的时候有没有人数限制的讨论案</td>
-  								<td class="card-r r-d">10月17日</td>
-  							</tr>
-  						</table>
-  					</div>
-  				</div>
-  			</div>
+            <div ng-show="issueShow">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="card-layout">
+                    <p class="media-heading text-muted">这里是事项单的名字</p>
+                    网络游戏的时候有没有人数限制的讨论案网络游戏的时候有没有人数限制的讨论案
+                    <div class="media-r-t text-muted">
+                      老马卡
+                    </div>
+                    <div class="media-r-b">
+                      10月17日
+                    </div>
+                  </div>
+                </div>
+              </div>  
+              <hr> 
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="card-layout">
+                    <p class="media-heading text-muted">这里是事项单的名字</p>
+                    网络游戏的时候有没有人数限制的讨论案网络游戏的时候有没有人数限制的讨论案
+                    <div class="media-r-t text-muted">
+                      老马卡
+                    </div>
+                    <div class="media-r-b">
+                      10月17日
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>  
+            </div> 
+            <div ng-hide="issueShow">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="card-layout">
+                    <p class="media-heading text-muted">第1次迭代</p>
+                    方案讨论
+                    <div class="media-r-t text-muted">
+                      56/67
+                    </div>
+                    <div class="media-r-b">
+                      老马卡 10月17日 创建
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              <hr>
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <div class="card-layout">
+                    <p class="media-heading text-muted">第1次迭代</p>
+                    方案讨论
+                    <div class="media-r-t text-muted">
+                      56/67
+                    </div>
+                    <div class="media-r-b">
+                      老马卡 10月17日 创建
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>                              
+            </div><!--nghide-->                    
+  				</div><!--panel body-->
+  			</div><!--panel-->
   			<div class="panel panel-default">
-  				<div class="panel-heading">计划</div>
+  				<div class="panel-heading">
+            <button class="btn btn-xs btn-info active btn-plan active" ng-click="toggleIssue('plan')">计划</button>
+            <button class="btn btn-xs btn-info btn-mile" ng-click="toggleIssue('mile')">￥里程碑</button>
+          </div>
   				<div class="panel-body">
-  					Panel content
+  					<div ng-show="planShow">
+              <div class="text-center">date selecter</div>
+              <div class="calendar-plan">
+                <ul>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                </ul>
+                <ul>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                </ul>
+                <ul>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                </ul>
+                <ul>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                </ul>
+                <ul>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                </ul>
+                <ul>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                  <li>d</li>
+                </ul>                                
+              </div>
+            </div>
+            <div ng-hide="planShow">
+              b
+            </div>
   				</div>
   			</div>
   			<div class="panel panel-default">

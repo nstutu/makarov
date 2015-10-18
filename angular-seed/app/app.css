@@ -406,32 +406,60 @@ div.dropdown-toggle{
 }
 .appmain .row .col-md-5 .panel-heading{
   padding: 12px 15px;
+  color: #009966;
+  font-weight: bold;
 }
-.card-issue .card-l{
+.appmain .row .col-md-5 .dd a{
+  text-decoration: none;
+  font-weight: bold;
+}
+.appmain .row .col-md-5 .panel-body{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.appmain .row .col-md-5 .panel-body .media{
+  font-size: 12px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.media .media-left .card-icon{
   width: 32px;
-  vertical-align: top;
-}
-.card-issue .card-m{
-  padding-left: 15px;
-  line-height: 1.5;
-}
-.card-issue .l-d{
-  padding-top: 5px;
-}
-.card-issue .r-t{
-  /*text-align: right;*/
-}
-.card-issue .r-d{
-  vertical-align: bottom;
-}
-.card-issue .card-r{
-  width: 60px;
-  text-align: right;
-}
-.card-issue .card-icon{
-  width:32px;
   height: 32px;
 }
-.card-issue table{
-  font-size: 12px;
+.media .media-left .card-icon{
+  width: 32px;
+  height: 32px;
+}
+.media .media-body{
+
+}
+.media .media-body .card-layout{
+  position: relative;
+
+}
+.media .media-r-t{
+  position: absolute;
+  top:0px;
+  right:0px;
+}
+.media .media-r-b{
+  text-align: right;
+}
+.media-footer{
+  padding-right: 15px;
+  text-align: right;
+}
+.media-footer a{
+  text-decoration: none;
+}
+.calendar-plan ul{
+  margin: 0px;
+  padding: 0px;
+}
+.calendar-plan ul li{
+  display: inline-block;
+  margin: 0px;
+  text-align: center;
+  vertical-align: top;
+  width:10%;
 }
