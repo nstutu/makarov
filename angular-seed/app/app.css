@@ -407,23 +407,31 @@ div.dropdown-toggle{
 .appmain .row .col-md-5 .panel-heading{
   padding: 12px 15px;
 }
-.card-issue{
-  position: relative;
+.card-issue .card-l{
+  width: 32px;
+  vertical-align: top;
+}
+.card-issue .card-m{
+  padding-left: 15px;
+  line-height: 1.5;
+}
+.card-issue .l-d{
+  padding-top: 5px;
+}
+.card-issue .r-t{
+  /*text-align: right;*/
+}
+.card-issue .r-d{
+  vertical-align: bottom;
+}
+.card-issue .card-r{
+  width: 60px;
+  text-align: right;
 }
 .card-issue .card-icon{
   width:32px;
   height: 32px;
 }
-.card-issue div{
+.card-issue table{
   font-size: 12px;
-}
-.card-issue .l-t{
-  position: absolute;
-  top:0px;
-  left: 47px;
-}
-.card-issue .r-t{
-  position: absolute;
-  top:0px;
-  right: 0px;
 }
