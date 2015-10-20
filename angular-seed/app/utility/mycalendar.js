@@ -4,14 +4,14 @@ angular.module('myApp.mycalendar', []).
 controller('calCtrl', ['$scope', function($scope){
 	$scope.dayrows=["1","2","3","4","5","6","7"];
 	$scope.items=[
-		{"c":"d1","t":"1"},
-		{"c":"d2","t":"0"},
-		{"c":"d3","t":"99"},
-		{"c":"d4","t":"0"},
-		{"c":"d5","t":"0"},
-		{"c":"d6","t":"0"},
-		{"c":"d7","t":"0"},								
-	];	
+		{"c":"d1","t":"1","curmonth":"","curday":""},
+		{"c":"d2","t":"0","curmonth":"curmonth","curday":""},
+		{"c":"d3","t":"99","curmonth":"curmonth","curday":""},
+		{"c":"d4","t":"0","curmonth":"curmonth","curday":"curday"},
+		{"c":"d5","t":"0","curmonth":"curmonth","curday":""},
+		{"c":"d6","t":"0","curmonth":"curmonth","curday":""},
+		{"c":"d7","t":"0","curmonth":"curmonth","curday":""},								
+	];
 	$scope.date = getMydate(0);
 	$scope.varMonth = 0;
 	$scope.addMonth = function(m){
@@ -26,8 +26,11 @@ controller('calCtrl', ['$scope', function($scope){
 		var month = d.getMonth(d.setMonth(tempMonth+m))+1;
 		var day= d.getDay();
 		var year = d.getFullYear();
-		console.log(year + '年' + month + '月');
-		return year + '年' + month + '月';
+		var date = new Object();
+		date.year=year;
+		date.month=month;
+		date.day=day;
+		return date;
 	};
 
 }])

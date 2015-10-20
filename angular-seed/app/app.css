@@ -481,6 +481,9 @@ div.dropdown-toggle{
 .calendar-plan ul li:last-child{
   border-right: 0px;
 }
+.calendar-plan ul li[curMonth]{
+  background-color: #6699cc;
+}
 .calendar-plan .week li{
   font-weight: bold;
 }

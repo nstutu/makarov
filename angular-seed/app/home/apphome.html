@@ -118,7 +118,7 @@
   						<div ng-controller="calCtrl">
   							<div class="text-center calendar-title" >
   								<span class="demo-icon"><a href="" ng-click="addMonth(-1)">&#xe884;</a></span>
-  								<a href="">{{date}}</a>
+  								<a href="">{{date.year}}年{{date.month}}月</a>
 								<span class="demo-icon"><a href="" ng-click="addMonth(1)">&#xe885;</a></span>
   							</div>
   							<div class="calendar-plan">
@@ -133,7 +133,7 @@
   									for li gap-->
   								</ul>
   								<ul ng-repeat="dayrow in dayrows">
-  									<li ng-repeat="item in items">
+  									<li  ng-repeat="item in items">
   										<p>{{item.c}}</p>
   										<p ng-if="item.t==0">&nbsp;</p>
   										<p ng-if="item.t>0" class="bg-success"><a href="" class="text-warning">+{{item.t}}</a> </p>
