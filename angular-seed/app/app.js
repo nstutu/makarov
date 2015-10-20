@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.view2',
   'myApp.home',
   'myApp.issue',
+  'myApp.mycalendar',
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});

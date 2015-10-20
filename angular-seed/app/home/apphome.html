@@ -110,72 +110,41 @@
   			</div><!--panel-->
   			<div class="panel panel-default">
   				<div class="panel-heading">
-            <button class="btn btn-xs btn-info active btn-plan active" ng-click="toggleIssue('plan')">计划</button>
-            <button class="btn btn-xs btn-info btn-mile" ng-click="toggleIssue('mile')">￥里程碑</button>
-          </div>
+  					<button class="btn btn-xs btn-info active btn-plan active" ng-click="toggleIssue('plan')">计划</button>
+  					<button class="btn btn-xs btn-info btn-mile" ng-click="toggleIssue('mile')">￥里程碑</button>
+  				</div>
   				<div class="panel-body">
   					<div ng-show="planShow">
-              <div class="text-center">date selecter</div>
-              <div class="calendar-plan">
-                <ul>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                </ul>
-                <ul>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                </ul>
-                <ul>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                </ul>
-                <ul>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                </ul>
-                <ul>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                </ul>
-                <ul>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                  <li>d</li>
-                </ul>                                
-              </div>
-            </div>
-            <div ng-hide="planShow">
-              b
-            </div>
+  						<div ng-controller="calCtrl">
+  							<div class="text-center calendar-title" >
+  								<span class="demo-icon"><a href="">&#xe884;</a></span>
+  								<a href="">{{date}}</a>
+								<span class="demo-icon"><a href="">&#xe885;</a></span>
+  							</div>
+  							<div class="calendar-plan">
+  								<ul class="week">
+  									<li>日</li><!--
+  									for li gap--><li>一</li><!--
+  									for li gap--><li>二</li><!--
+  									for li gap--><li>三</li><!--
+  									for li gap--><li>四</li><!--
+  									for li gap--><li>五</li><!--
+  									for li gap--><li>六</li><!--
+  									for li gap-->
+  								</ul>
+  								<ul ng-repeat="dayrow in dayrows">
+  									<li ng-repeat="item in items">
+  										<p>{{item.c}}</p>
+  										<p ng-if="item.t==0">&nbsp;</p>
+  										<p ng-if="item.t>0">{{item.t}} </p>
+  									</li>
+  								</ul>
+  							</div>
+  						</div>
+  					</div>
+  					<div ng-hide="planShow">
+  						b
+  					</div>
   				</div>
   			</div>
   			<div class="panel panel-default">
