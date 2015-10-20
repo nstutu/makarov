@@ -117,9 +117,9 @@
   					<div ng-show="planShow">
   						<div ng-controller="calCtrl">
   							<div class="text-center calendar-title" >
-  								<span class="demo-icon"><a href="">&#xe884;</a></span>
+  								<span class="demo-icon"><a href="" ng-click="addMonth(-1)">&#xe884;</a></span>
   								<a href="">{{date}}</a>
-								<span class="demo-icon"><a href="">&#xe885;</a></span>
+								<span class="demo-icon"><a href="" ng-click="addMonth(1)">&#xe885;</a></span>
   							</div>
   							<div class="calendar-plan">
   								<ul class="week">
@@ -136,10 +136,11 @@
   									<li ng-repeat="item in items">
   										<p>{{item.c}}</p>
   										<p ng-if="item.t==0">&nbsp;</p>
-  										<p ng-if="item.t>0">{{item.t}} </p>
+  										<p ng-if="item.t>0" class="bg-success"><a href="" class="text-warning">+{{item.t}}</a> </p>
   									</li>
   								</ul>
   							</div>
+  							<div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>
   						</div>
   					</div>
   					<div ng-hide="planShow">

@@ -459,8 +459,15 @@ div.dropdown-toggle{
   border-top:1px solid #eee;
   font-size: 12px;
 }
+.calendar-plan ul li p a{
+  text-decoration: none;
+}
+.calendar-plan ul li p a:hover{
+  color: #fff;
+}
 .calendar-plan ul:last-child{
   border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
 }
 .calendar-plan ul li{
   display: inline-block;
@@ -474,6 +481,9 @@ div.dropdown-toggle{
 .calendar-plan ul li:last-child{
   border-right: 0px;
 }
+.calendar-plan .week li{
+  font-weight: bold;
+}
 .calendar-title{
   margin-bottom: 10px;
 }
@@ -485,6 +495,4 @@ div.dropdown-toggle{
   font-size: 20px;
   vertical-align: text-bottom;
 }
-.calendar-plan .week li{
-  font-weight: bold;
-}
+
