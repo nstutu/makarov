@@ -133,10 +133,10 @@
   									for li gap-->
   								</ul>
   								<ul ng-repeat="dayrow in dayrows">
-  									<li  ng-repeat="item in items">
+  									<li  ng-repeat="item in items[dayrow]">
   										<p>{{item.c}}</p>
   										<p ng-if="item.t==0">&nbsp;</p>
-  										<p ng-if="item.t>0" class="bg-success"><a href="" class="text-warning">+{{item.t}}</a> </p>
+  										<p ng-if="item.t>0" class="bg-success"><a href="" class="text-warning">+{{item.f}}</a> </p>
   									</li>
   								</ul>
   							</div>
