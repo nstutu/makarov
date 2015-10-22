@@ -115,11 +115,11 @@
   				</div>
   				<div class="panel-body">
   					<div ng-show="planShow">
-  						<div ng-controller="calCtrl">
+  						<div ng-controller="calCtrl" >
   							<div class="text-center calendar-title" >
-  								<span class="demo-icon"><a href="" ng-click="addMonth(-1)">&#xe884;</a></span>
+  								<span class="demo-icon"><a href="" ng-click="changeItem(-1)">&#xe884;</a></span>
   								<a href="">{{date.year}}年{{date.month}}月</a>
-								<span class="demo-icon"><a href="" ng-click="addMonth(1)">&#xe885;</a></span>
+								  <span class="demo-icon"><a href="" ng-click="changeItem(1)">&#xe885;</a></span>
   							</div>
   							<div class="calendar-plan">
   								<ul class="week">
@@ -134,14 +134,15 @@
   								</ul>
   								<ul ng-repeat="dayrow in dayrows">
   									<li  ng-repeat="item in items[dayrow]">
-  										<p>{{item.c}}</p>
-  										<p ng-if="item.t==0">&nbsp;</p>
-  										<p ng-if="item.t>0" class="bg-success"><a href="" class="text-warning">+{{item.f}}</a> </p>
+  										<div class="center-block" fulldate="{{item.f}}" fm="{{item.fm}}" cd="{{item.cd}}">
+                        {{item.c}}
+                      </div>
+                      <span class="text-muted center-block">{{item.t}}</span>
   									</li>
   								</ul>
   							</div>
   							<div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>
-  						</div>
+              </div>
   					</div>
   					<div ng-hide="planShow">
   						b

@@ -1,21 +1,22 @@
 'use strict';
 
 angular.module('myApp.mycalendar', []).
-controller('calCtrl', ['$scope', function($scope){
+controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 	$scope.dayrows=[0,1,2,3,4,5];
 	$scope.date = getMydate(0);
-	$scope.today= new Date();
 	$scope.firstDay= new Date();
 	$scope.varMonth = 0;
 	getCalendar();
-
+	$scope.ttt=0;
+	$scope.ddd=1;
 	function getCalendar(){
 		var items = setNewItem();
 		$scope.firstDay.setFullYear($scope.date.year,$scope.date.month-1);
 		$scope.firstDay.setDate(1);
+		var today = getMydate(0).year + '-' + getMydate(0).month +'-' +getMydate(0).day;
+		var curMonth = $scope.firstDay.getMonth()+1;
 		var b = $scope.firstDay.getDay($scope.firstDay);
 		b=(b==0?7:b);
-		console.log(b);
 		$scope.firstDay.setDate(-b+1);
 		for (var l = 0; l<6; l++) {
 			for (var i = 0 ; i <=6 ; i++) {
@@ -23,26 +24,41 @@ controller('calCtrl', ['$scope', function($scope){
 				var m = $scope.firstDay.getMonth()+1;
 				var y = $scope.firstDay.getFullYear();
 				var f = y + '-' + m + '-' + d;
-				items[l][i]={"c":d,"f":f,"t":0};
+				var fm = (m==curMonth?'1':'0');
+				var cd =(f==today?'1':'0') ;
+				items[l][i]={"c":d,"f":f,"fm":fm,"t":"","cd":cd};
 				$scope.firstDay.setDate(d+1);
 			}	
 		}
+		items[1][2].t="9+";
 		$scope.items = items;
-		console.log($scope.items[1]);
-	
 	}
 
 
 
 
-	$scope.addMonth = function(m){
+	$scope.changeItem = function(m){
 		$scope.varMonth+=m;
 		$scope.date=getMydate($scope.varMonth);
 		getCalendar();
 	}
 
 
-	function getMydate(m){
+	function setNewItem(){
+		var items= new Array();
+		for (var i = 0; i <6; i++) {
+			items[i]= new Array();
+			for (var j = 0; j <=6; j++) {
+				items[i][j]= new Array();
+			};			
+		};
+		return items;
+	}
+
+
+}])
+.factory('getMydate',  function(){
+	return function (m){
 		var da= new Date();
 		var tempMonth = da.getMonth();
 		var month = da.getMonth(da.setMonth(tempMonth+m))+1;
@@ -53,20 +69,5 @@ controller('calCtrl', ['$scope', function($scope){
 		date.month=month;
 		date.day=day;
 		return date;
-	}
-
-	function setNewItem(){
-		var items= new Array();
-		for (var i = 0; i <6; i++) {
-			items[i]= new Array();
-			for (var j = 0; j <=6; j++) {
-				items[i][j]= new Array();
-			};			
-		};
-		console.log(items[0]);
-		return items;
-	}
-
-
-
-}])
+	};
+})

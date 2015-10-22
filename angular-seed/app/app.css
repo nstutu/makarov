@@ -459,6 +459,28 @@ div.dropdown-toggle{
   border-top:1px solid #eee;
   font-size: 12px;
 }
+
+.calendar-plan ul li div:first-child{
+  font-size: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-bottom: 0px;
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  border:0px;
+}
+.calendar-plan ul li span:not(:empty){
+  width: 14px;
+  height: 14px;
+  border-width: 0px;
+  border-radius: 6px;
+  background-color: #dff0d8;
+}
+.calendar-plan ul li span:empty{
+  width: 14px;
+  height: 14px;
+}
 .calendar-plan ul li p a{
   text-decoration: none;
 }
@@ -476,13 +498,12 @@ div.dropdown-toggle{
   text-align: center;
   vertical-align: top;
   width:14.28571428571429%;
-  border-right: 1px solid #eee;
 }
-.calendar-plan ul li:last-child{
-  border-right: 0px;
+.calendar-plan ul li div[cd="1"]{
+  background-color: #d9edf7;
 }
-.calendar-plan ul li[curMonth]{
-  background-color: #6699cc;
+.calendar-plan ul li div[fm="0"]{
+  color: #ccc;
 }
 .calendar-plan .week li{
   font-weight: bold;

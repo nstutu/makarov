@@ -22,7 +22,6 @@ config(['$routeProvider', function($routeProvider) {
 			angular.element($('#bs-example-navbar-collapse-1')).collapse('hide');
 			console.log('aaaaaaa');
 		};
-
 }])
 .directive('brandbar',['$rootScope',function($rootScope){
 	var url='user/notlogin.html';
