@@ -2,13 +2,13 @@
 
 angular.module('myApp.mycalendar', []).
 controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
-	$scope.dayrows=[0,1,2,3,4,5];
+	$scope.itemType='dd';
+	$scope.dayrows=getItemHeader(itemType);
 	$scope.date = getMydate(0);
 	$scope.firstDay= new Date();
 	$scope.varMonth = 0;
 	getCalendar();
-	$scope.ttt=0;
-	$scope.ddd=1;
+
 	function getCalendar(){
 		var items = setNewItem();
 		$scope.firstDay.setFullYear($scope.date.year,$scope.date.month-1);
@@ -30,7 +30,7 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 				$scope.firstDay.setDate(d+1);
 			}	
 		}
-		items[1][2].t="9+";
+		items[1][2].t="9";
 		$scope.items = items;
 	}
 
@@ -53,6 +53,31 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 			};			
 		};
 		return items;
+	}
+
+	function getItemHeader(type){
+		var dayrows = new Array();
+		var v = 3;
+		switch(type){
+			case 'dd':
+				v=6;
+				break;
+			case 'mm':
+				v=3;
+				break;
+			case 'yy':
+				v=3;
+				break;
+		}
+
+		for (var i = 0; i < v; i++) {
+			dayrows[i]=i;
+		};
+		return dayrows;
+	}
+
+	function setItemType(type){
+		$scope.itemType=type;
 	}
 
 
