@@ -117,12 +117,13 @@
   					<div ng-show="planShow">
   						<div ng-controller="calCtrl" >
   							<div class="text-center calendar-title" >
-  								<span class="demo-icon"><a href="" ng-click="changeItem(-1)">&#xe884;</a></span>
-  								<a href="">{{date.year}}年{{date.month}}月</a>
-								  <span class="demo-icon"><a href="" ng-click="changeItem(1)">&#xe885;</a></span>
+  								<span class="demo-icon"><a href="" ng-click="changeItem(itemType,-1)">&#xe884;</a></span>
+  								<a href="" ng-click="showCalendar()">{{calendarTitle}}</a>
+								  <span class="demo-icon"><a href="" ng-click="changeItem(itemType,1)">&#xe885;</a></span>
   							</div>
   							<div class="calendar-plan">
-  								<ul >
+  								<ul calendarType="{{itemType}}">
+                    <div ng-if="itemType=='dd'">
   									<li>日</li><!--
   									for li gap--><li>一</li><!--
   									for li gap--><li>二</li><!--
@@ -131,8 +132,9 @@
   									for li gap--><li>五</li><!--
   									for li gap--><li>六</li><!--
   									for li gap-->
+                    </div>
   								</ul>
-  								<ul ng-repeat="dayrow in dayrows">
+  								<ul ng-repeat="dayrow in dayrows" calendarType="{{itemType}}">
   									<li  ng-repeat="item in items[dayrow]">
   										<div class="center-block" fulldate="{{item.f}}" fm="{{item.fm}}" cd="{{item.cd}}">
                         {{item.c}}

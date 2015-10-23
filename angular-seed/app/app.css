@@ -498,7 +498,15 @@ div.dropdown-toggle{
   padding:5px 0px 10px;
   text-align: center;
   vertical-align: top;
-  width:14.28571428571429%;
+}
+.calendar-plan ul[calendarType='dd'] li{
+    width:14.28571428571429%;
+}
+.calendar-plan ul[calendarType='mm'] li{
+    width:25%;
+}
+.calendar-plan ul[calendarType='yy'] li{
+    width:25%;
 }
 .calendar-plan ul li div[cd="1"]{
   background-color: #d9edf7;
