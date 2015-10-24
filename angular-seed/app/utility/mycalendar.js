@@ -6,6 +6,7 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 	var date = getMydate(0);
 	var firstDay= new Date();
 	var varMonth = 0;
+	var varYear = 0;
 	setDayrows($scope.itemType);
 	getCalendar();
 
@@ -55,7 +56,11 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 		}
 
 		function changeYear(){
-			
+			var curyear = firstDay.getFullYear();
+			console.log(varYear + ' ' + curyear);
+			firstDay.setFullYear(curyear + m);
+			getCalendarMonth();
+
 		}
 		
 		function changeDecade(){
@@ -143,9 +148,9 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 
 	function getCalendarYear(){
 		var items = setNewItem('yy');
-		var varYear = firstDay.getFullYear()%10;
+		var n = firstDay.getFullYear()%10;
 		var firstYear = firstDay.getFullYear();		
-		firstDay.setFullYear(firstYear-varYear);
+		firstDay.setFullYear(firstYear-n);
 		var s = firstDay.getFullYear();
 		var v=0;
 		for (var i = 0; i < 3; i++) {
@@ -155,7 +160,7 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 			};
 		};
 		$scope.items = items;
-		$scope.calendarTitle = (s-1) + '-' + (s+10);		
+		$scope.calendarTitle = (s) + '-' + (s+9);		
 	}
 
 
