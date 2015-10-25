@@ -469,6 +469,10 @@ div.dropdown-toggle{
   height: 32px;
   border-radius: 32px;
   border:0px;
+  cursor: pointer;
+}
+.calendar-plan ul[calendarType='yy'] li div:first-child{
+  font-size: 14px;
 }
 .calendar-plan ul li span:not(:empty){
   width: 14px;

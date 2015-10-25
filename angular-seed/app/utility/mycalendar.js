@@ -3,37 +3,39 @@
 angular.module('myApp.mycalendar', []).
 controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 	$scope.itemType='dd';
-	var date = getMydate(0);
-	var firstDay= new Date();
-	var varMonth = 0;
+	var f1= new Date();
+	var f1curMonth = 0;
+	var f1curYear = 0;
+	var f2= new Date();
+	var f3= new Date();
+	var today = getMydate(0).year + '-' + getMydate(0).month +'-' +getMydate(0).day;	
 	var varYear = 0;
 	setDayrows($scope.itemType);
 	getCalendar();
 
 	function getCalendar(){
 		var items = setNewItem('dd');
-		firstDay.setFullYear(date.year,date.month-1);
-		firstDay.setDate(1);
-		var today = getMydate(0).year + '-' + getMydate(0).month +'-' +getMydate(0).day;
-		var curMonth = firstDay.getMonth()+1;
-		var b = firstDay.getDay(firstDay);
+		f1.setFullYear(f1.getFullYear(),f1.getMonth(),1);
+		f1curMonth = f1.getMonth()+1;
+		f1curYear = f1.getFullYear();
+		var b = f1.getDay();
 		b=(b==0?7:b);
-		firstDay.setDate(-b+1);
+		f1.setDate(-b+1);
 		for (var l = 0; l<6; l++) {
 			for (var i = 0 ; i <=6 ; i++) {
-				var d = firstDay.getDate();
-				var m = firstDay.getMonth()+1;
-				var y = firstDay.getFullYear();
+				var d = f1.getDate();
+				var m = f1.getMonth()+1;
+				var y = f1.getFullYear();
 				var f = y + '-' + m + '-' + d;
-				var fm = (m==curMonth?'1':'0');
+				var fm = (m==f1curMonth?'1':'0');
 				var cd =(f==today?'1':'0') ;
 				items[l][i]={"c":d,"f":f,"fm":fm,"t":"","cd":cd};
-				firstDay.setDate(d+1);
+				f1.setDate(d+1);
 			}	
 		}
 		items[1][2].t="9";
 		$scope.items = items;
-		$scope.calendarTitle = y + '年' + m +'月';
+		$scope.calendarTitle = f1curYear + '年' + f1curMonth +'月';
 	}
 
 	$scope.changeItem = function(type,m){
@@ -50,9 +52,11 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 		}
 
 		function changeMonth(){
-			varMonth+=m;
-			date=getMydate(varMonth);
-			getCalendar();			
+			var vm = f1curMonth-1;
+			var vy = f1curYear;
+			f1.setFullYear(vy,vm+m);
+			console.log(f1);
+			getCalendar();
 		}
 
 		function changeYear(){
@@ -127,6 +131,7 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 			case 'yy':
 			$scope.itemType='dd';
 			setDayrows('dd');
+			firstDay.setFullYear();
 			getCalendar();
 			break;
 		}		
@@ -150,7 +155,6 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 		$scope.calendarTitle = firstDay.getFullYear() + '年';
 	}
 
-
 	function getCalendarYear(){
 		var items = setNewItem('yy');
 		var n = firstDay.getFullYear()%10;
@@ -159,15 +163,38 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 		var s = firstDay.getFullYear();
 		var v=0;
 		var fm=1;
+		var cd = 0;
+		var cm = getMydate(0).year;
 		for (var i = 0; i < 3; i++) {
 			for (var j=0; j < 4; j++) {
 				fm=((v==0 || v== 11)?0:1);
-				items[i][j]={"c":s+v-1,"f":"","fm":fm,"t":"","cd":""};
+				cd=(cm==s+v-1?1:0);
+				items[i][j]={"c":s+v-1,"f":s+v-1,"fm":fm,"t":"","cd":cd};
 				v++;
 			};
 		};
 		$scope.items = items;
 		$scope.calendarTitle = s + '-' + (s+9);		
+	}
+
+	$scope.changeCalendar = function(item){
+		switch($scope.itemType){
+			case 'dd':
+			break;
+			case 'mm':
+				$scope.itemType='dd';
+				setDayrows('dd');
+				var y = item.substring(0,4);
+				var m = item.substring(5);
+				firstDay.setFullYear(y,m);
+				getCalendar();
+			break;
+			case 'yy':
+				$scope.itemType='mm';
+				setDayrows('mm');
+				getCalendarMonth();
+			break;
+		}	
 	}
 
 

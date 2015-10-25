@@ -136,7 +136,7 @@
   								</ul>
   								<ul ng-repeat="dayrow in dayrows" calendarType="{{itemType}}">
   									<li  ng-repeat="item in items[dayrow]">
-  										<div class="center-block" fulldate="{{item.f}}" fm="{{item.fm}}" cd="{{item.cd}}">
+  										<div class="center-block" fulldate="{{item.f}}" fm="{{item.fm}}" cd="{{item.cd}}" ng-click="changeCalendar(item.f)">
                         {{item.c}}
                       </div>
                       <span class="text-muted center-block">{{item.t}}</span>
