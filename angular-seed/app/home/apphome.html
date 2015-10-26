@@ -122,8 +122,8 @@
 								  <span class="demo-icon"><a href="" ng-click="changeItem(itemType,1)">&#xe885;</a></span>
   							</div>
   							<div class="calendar-plan">
-  								<ul calendarType="{{itemType}}">
-                    <div ng-if="itemType=='dd'">
+  								<ul calendarType="{{itemType}}" ng-if="itemType=='dd'">
+                    <div >
   									<li>日</li><!--
   									for li gap--><li>一</li><!--
   									for li gap--><li>二</li><!--
@@ -147,9 +147,35 @@
               </div>
   					</div>
   					<div ng-hide="planShow">
-  						b
-  					</div>
-  				</div>
+              <div ng-controller="calCtrl" >
+                <div class="text-center calendar-title" >
+                  <span class="demo-icon"><a href="" ng-click="changeItem(itemType,-1)">&#xe884;</a></span>
+                  <a href="" >{{calendarTitle}}</a>
+                  <span class="demo-icon"><a href="" ng-click="changeItem(itemType,1)">&#xe885;</a></span>
+                </div>
+                <div class="calendar-plan" ng-init="itemType='dd';showCalendar()" ng-init="">
+                  <ul ng-repeat="dayrow in dayrows" calendarType="{{itemType}}">
+                    <li  ng-repeat="item in items[dayrow]">
+                      <div class="center-block" fulldate="{{item.f}}"  cd="{{item.cd}}" >
+                        {{item.c}}
+                      </div>
+                      <div class="text-muted">
+                        <span style="font-size:10px;">
+                        <p>已完成：</p>
+                          <p><a href="">889,423,423</a></p>
+                         <p>未完成:</p>  
+                          <p><a href="">23423</a></p> 
+                          <p>总计：</p>
+                          <p><a href="">23423</a></p> 
+                        </span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>
+              </div><!--ngcontroller-->
+              </div><!--nghide-->
+          </div>
   			</div>
   			<div class="panel panel-default">
   				<div class="panel-heading">项目</div>

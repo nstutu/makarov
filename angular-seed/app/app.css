@@ -2,6 +2,8 @@
 html,body{
   background-color: #f5f8fa;
   color:#444444;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
 }
 @media (min-width: 992px){
  html,body {
@@ -474,6 +476,9 @@ div.dropdown-toggle{
 .calendar-plan ul[calendarType='yy'] li div:first-child{
   font-size: 14px;
 }
+.calendar-plan ul[calendarType='mm'] li div:first-child{
+  font-size: 14px;
+}
 .calendar-plan ul li span:not(:empty){
   width: 14px;
   height: 14px;
@@ -518,7 +523,7 @@ div.dropdown-toggle{
 .calendar-plan ul li div[fm="0"]{
   color: #ccc;
 }
-.calendar-plan ul:first-child li{
+.calendar-plan ul:first-child>div>li{
   font-weight: bold;
 }
 .calendar-title{
