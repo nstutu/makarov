@@ -2,8 +2,6 @@
 html,body{
   background-color: #f5f8fa;
   color:#444444;
-  text-size-adjust: 100%;
-  -webkit-text-size-adjust: none;
 }
 @media (min-width: 992px){
  html,body {
@@ -228,14 +226,12 @@ div.dropdown-toggle{
 }
 .footer{
   border-top: 1px solid #ddd;
-  /*margin-top:150px;*/
   padding:0px;
   padding-bottom: 50px;
   color: rgba(255, 255, 255, 0.8);
   background-color: #3097d1;
 }
 .footer .container{
-  /*background-color: #fff;*/
   padding-top: 40px;
 }
 .footer .copyright{
@@ -284,7 +280,6 @@ div.dropdown-toggle{
 .regContent .formRight{
   float: right;
   width:35%;
-  
 }
 .regContent .checkCode{
   height: 46px;
@@ -406,20 +401,20 @@ div.dropdown-toggle{
     margin-top: -60px;
     margin-bottom: 10px;
 }
-.appmain .row .col-md-5 .panel-heading{
+.appmain .row .col-md-5 .panel-heading,.appmain .row .col-md-4 .panel-heading{
   padding: 12px 15px;
   color: #009966;
   font-weight: bold;
 }
-.appmain .row .col-md-5 .dd a{
+.appmain .row .col-md-5 .dd a,.appmain .row .col-md-4 .dd a{
   text-decoration: none;
   font-weight: bold;
 }
-.appmain .row .col-md-5 .panel-body{
+.appmain .row .col-md-5 .panel-body,.appmain .row .col-md-4 .panel-body{
   padding-left: 0px;
   padding-right: 0px;
 }
-.appmain .row .col-md-5 .panel-body .media{
+.appmain .row .col-md-5 .panel-body .media,.appmain .row .col-md-4 .panel-body .media{
   font-size: 12px;
   margin-left: 15px;
   margin-right: 15px;
@@ -432,12 +427,24 @@ div.dropdown-toggle{
   width: 32px;
   height: 32px;
 }
-.media .media-body{
 
-}
 .media .media-body .card-layout{
   position: relative;
 
+}
+.media .media-heading{
+  text-align: justify;
+}
+.media .work-tag{
+  margin: 0px;
+  padding: 0px 5px;
+  border: 0px;
+  background-color: rgb(255,217,102);
+  border-radius: 3px;
+}
+.media .work-tag a{
+  color: #fff;
+  text-decoration: none;
 }
 .media .media-r-t{
   position: absolute;
@@ -446,6 +453,11 @@ div.dropdown-toggle{
 }
 .media .media-r-b{
   text-align: right;
+}
+.media .de{
+  position: absolute;
+  bottom:0px;
+  right: 0px;
 }
 .media-footer{
   padding-right: 15px;
@@ -463,7 +475,7 @@ div.dropdown-toggle{
 }
 
 .calendar-plan ul li div:first-child{
-  font-size: 16px;
+  font-size: 14px;
   padding-bottom: 5px;
   padding-top: 5px;
   margin-bottom: 0px;
@@ -472,12 +484,6 @@ div.dropdown-toggle{
   border-radius: 32px;
   border:0px;
   cursor: pointer;
-}
-.calendar-plan ul[calendarType='yy'] li div:first-child{
-  font-size: 14px;
-}
-.calendar-plan ul[calendarType='mm'] li div:first-child{
-  font-size: 14px;
 }
 .calendar-plan ul li span:not(:empty){
   width: 14px;
@@ -493,9 +499,11 @@ div.dropdown-toggle{
 }
 .calendar-plan ul li p a{
   text-decoration: none;
+  word-wrap:break-word;
+  word-break:break-all;
 }
-.calendar-plan ul li p a:hover{
-  color: #fff;
+.calendar-plan ul li div span p.sub-title{
+  margin-bottom: 5px;
 }
 .calendar-plan ul:last-child{
   border-bottom: 1px solid #eee;
@@ -526,6 +534,17 @@ div.dropdown-toggle{
 .calendar-plan ul:first-child>div>li{
   font-weight: bold;
 }
+.calendar-plan .milestone-month{
+  text-align: left ;
+}
+.calendar-plan .milestone-item{
+  padding-left: 5px;
+}
+.calendar-plan ul li div+hr{
+  margin-top: 0px;
+  margin-bottom: 15px;
+  width: 10px;
+}
 .calendar-title{
   margin-bottom: 10px;
 }
@@ -537,4 +556,5 @@ div.dropdown-toggle{
   font-size: 20px;
   vertical-align: text-bottom;
 }
+
 

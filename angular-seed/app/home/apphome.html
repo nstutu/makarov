@@ -7,19 +7,20 @@
   				<div class="panel-heading db">
   				</div>
   				<div class="panel-body">
+
   					<img src="res/img/tx.jpg" alt="" class="center-block img-circle" >
   					<h3 class="text-center">{{nickname}}</h3>
   					<p class="text-center">{{regdate}} 注册</p>
   				</div>
   			</div>
-  		</div>
+  		</div><!--col-md-3-->
   		<div class="col-md-5">
   			<div class="panel panel-default" ng-controller="issueCtrl">
   				<div class="panel-heading dd">
             <button class="btn btn-xs btn-info active btn-issue" ng-click="toggleIssue('issue')">事项</button>
             <button class="btn btn-xs btn-info btn-sheet" ng-click="toggleIssue('sheet')">事项单</button>
           </div>
-  				<div class="panel-body">
+          <div class="panel-body">
             <div ng-show="issueShow">
               <div class="media">
                 <div class="media-left">
@@ -34,7 +35,7 @@
                     <div class="media-r-t text-muted">
                       老马卡
                     </div>
-                    <div class="media-r-b">
+                    <div class="media-r-b text-muted">
                       10月17日
                     </div>
                   </div>
@@ -54,7 +55,7 @@
                     <div class="media-r-t text-muted">
                       老马卡
                     </div>
-                    <div class="media-r-b">
+                    <div class="media-r-b text-muted">
                       10月17日
                     </div>
                   </div>
@@ -77,8 +78,8 @@
                     <div class="media-r-t text-muted">
                       56/67
                     </div>
-                    <div class="media-r-b">
-                      老马卡 10月17日 创建
+                    <div class="media-r-b text-muted">
+                      老马卡 10月17日
                     </div>
                   </div>
                 </div>
@@ -97,33 +98,34 @@
                     <div class="media-r-t text-muted">
                       56/67
                     </div>
-                    <div class="media-r-b">
-                      老马卡 10月17日 创建
+                    <div class="media-r-b text-muted">
+                      老马卡 10月17日 
                     </div>
                   </div>
                 </div>
               </div>
               <hr>
-              <div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>                              
+              <div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>                          
             </div><!--nghide-->                    
-  				</div><!--panel body-->
-  			</div><!--panel-->
-  			<div class="panel panel-default">
-  				<div class="panel-heading">
-  					<button class="btn btn-xs btn-info active btn-plan active" ng-click="toggleIssue('plan')">计划</button>
-  					<button class="btn btn-xs btn-info btn-mile" ng-click="toggleIssue('mile')">￥里程碑</button>
-  				</div>
-  				<div class="panel-body">
-  					<div ng-show="planShow">
-  						<div ng-controller="calCtrl" >
-  							<div class="text-center calendar-title" >
-  								<span class="demo-icon"><a href="" ng-click="changeItem(itemType,-1)">&#xe884;</a></span>
-  								<a href="" ng-click="showCalendar()">{{calendarTitle}}</a>
-								  <span class="demo-icon"><a href="" ng-click="changeItem(itemType,1)">&#xe885;</a></span>
-  							</div>
-  							<div class="calendar-plan">
-  								<ul calendarType="{{itemType}}" ng-if="itemType=='dd'">
-                    <div >
+          </div><!--panel body-->
+        </div><!--panel-->
+        <!-- 计划 start-->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+           <button class="btn btn-xs btn-info active btn-plan active" ng-click="toggleIssue('plan')">计划</button>
+           <button class="btn btn-xs btn-info btn-mile" ng-click="toggleIssue('mile')">￥里程碑</button>
+          </div>
+          <div class="panel-body">
+           <div ng-show="planShow">
+            <div ng-controller="calCtrl" >
+             <div class="text-center calendar-title" >
+              <span class="demo-icon"><a href="" ng-click="changeItem(itemType,-1)">&#xe884;</a></span>
+              <a href="" ng-click="showCalendar()">{{calendarTitle}}</a>
+              <span class="demo-icon"><a href="" ng-click="changeItem(itemType,1)">&#xe885;</a></span>
+            </div>
+            <div class="calendar-plan">
+              <ul calendarType="{{itemType}}" ng-if="itemType=='dd'">
+                <div >
   									<li>日</li><!--
   									for li gap--><li>一</li><!--
   									for li gap--><li>二</li><!--
@@ -132,80 +134,261 @@
   									for li gap--><li>五</li><!--
   									for li gap--><li>六</li><!--
   									for li gap-->
-                    </div>
-  								</ul>
-  								<ul ng-repeat="dayrow in dayrows" calendarType="{{itemType}}">
-  									<li  ng-repeat="item in items[dayrow]">
-  										<div class="center-block" fulldate="{{item.f}}" fm="{{item.fm}}" cd="{{item.cd}}" ng-click="changeCalendar(item.f)">
-                        {{item.c}}
-                      </div>
-                      <span class="text-muted center-block">{{item.t}}</span>
-  									</li>
-  								</ul>
-  							</div>
-  							<div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>
-              </div>
-  					</div>
-  					<div ng-hide="planShow">
-              <div ng-controller="calCtrl" >
-                <div class="text-center calendar-title" >
-                  <span class="demo-icon"><a href="" ng-click="changeItem(itemType,-1)">&#xe884;</a></span>
-                  <a href="" >{{calendarTitle}}</a>
-                  <span class="demo-icon"><a href="" ng-click="changeItem(itemType,1)">&#xe885;</a></span>
-                </div>
-                <div class="calendar-plan" ng-init="itemType='dd';showCalendar()" ng-init="">
-                  <ul ng-repeat="dayrow in dayrows" calendarType="{{itemType}}">
-                    <li  ng-repeat="item in items[dayrow]">
-                      <div class="center-block" fulldate="{{item.f}}"  cd="{{item.cd}}" >
-                        {{item.c}}
-                      </div>
-                      <div class="text-muted">
-                        <span style="font-size:10px;">
-                        <p>已完成：</p>
-                          <p><a href="">889,423,423</a></p>
-                         <p>未完成:</p>  
-                          <p><a href="">23423</a></p> 
-                          <p>总计：</p>
-                          <p><a href="">23423</a></p> 
-                        </span>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>
-              </div><!--ngcontroller-->
-              </div><!--nghide-->
+                  </div>
+                </ul>
+                <ul ng-repeat="dayrow in dayrows" calendarType="{{itemType}}">
+                 <li  ng-repeat="item in items[dayrow]">
+                  <div class="center-block" fulldate="{{item.f}}" fm="{{item.fm}}" cd="{{item.cd}}" ng-click="changeCalendar(item.f)">
+                    {{item.c}}
+                  </div>
+                  <span class="text-muted center-block">{{item.t}}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>
+          </div><!--ngcontroller-->
+        </div><!--ngshow-->
+        <div ng-hide="planShow">
+          <div ng-controller="calCtrl" >
+            <div class="text-center calendar-title" >
+              <span class="demo-icon"><a href="" ng-click="changeItem(itemType,-1)">&#xe884;</a></span>
+              <a href="" >{{calendarTitle}}</a>
+              <span class="demo-icon"><a href="" ng-click="changeItem(itemType,1)">&#xe885;</a></span>
+            </div>
+            <div class="calendar-plan" ng-init="itemType='dd';showCalendar()" ng-init="">
+              <ul ng-repeat="dayrow in dayrows" calendarType="{{itemType}}">
+                <li  ng-repeat="item in items[dayrow]" class="milestone-item">
+                  <div class="milestone-month" fulldate="{{item.f}}"  cd="{{item.cd}}" >
+                    {{item.c}}
+                  </div>
+                  <hr>
+                  <div class="text-muted">
+                    <span style="text-align:left">
+                      <p class="sub-title">已完成：</p>
+                      <p><a href="">8,423,423</a></p>
+                      <p class="sub-title">未完成:</p>  
+                      <p><a href="">23,423</a></p> 
+                      <p class="sub-title">总计：</p>
+                      <p><a href="">23,423</a></p> 
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>
+          </div><!--ngcontroller-->
+        </div><!--nghide-->
+      </div><!--panel body-->
+    </div><!--计划panel-->
+    <!--项目start-->
+    <div class="panel panel-default">
+      <div class="panel-heading">项目</div>
+      <div class="panel-body">
+        <div class="media">
+          <div class="media-left">
+            <a href="#">
+              <img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+            </a>
           </div>
-  			</div>
-  			<div class="panel panel-default">
-  				<div class="panel-heading">项目</div>
-  				<div class="panel-body">
-  					Panel content
-  				</div>
-  			</div>
-  		</div>
-  		<div class="col-md-4">
-  			<div class="panel panel-default">
-  				<div class="panel-heading">文档</div>
-  				<div class="panel-body">
-  					Panel content
-  				</div>
-  			</div>
-  			<div class="panel panel-default">
-  				<div class="panel-heading">记事</div>
-  				<div class="panel-body">
-  					Panel content
-  				</div>
-  			</div>
-  			<div class="panel panel-default">
-  				<div class="panel-heading">工时</div>
-  				<div class="panel-body">
-  					Panel content
-  				</div>
-  			</div>
-  		</div>  		
-  	</div>
-
-  	</div>  	
-  </div>
-</div>
+          <div class="media-body">
+            <div class="card-layout">
+              <p class="media-heading">一棒打倒网络RPG游戏<p>
+                <div class="media-l-b text-muted">
+                  10月17日
+                </div>
+                <div class="media-r-b text-muted de">
+                  1/6 正常
+                </div>
+              </div>
+            </div> <!--mediabody-->
+          </div> <!--media-->
+          <hr>
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+              </a>
+            </div>
+            <div class="media-body">
+              <div class="card-layout">
+                <p class="media-heading">一棒打倒网络RPG游戏<p>
+                  <div class="media-l-b text-muted">
+                    10月17日
+                  </div>
+                  <div class="media-r-b text-muted de">
+                    1/6 正常
+                  </div>
+                </div>
+              </div> <!--mediabody-->
+            </div> <!--media-->   
+            <hr>
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <div class="card-layout">
+                  <p class="media-heading">一棒打倒网络RPG游戏<p>
+                    <div class="media-l-b text-muted">
+                      10月17日
+                    </div>
+                    <div class="media-r-b text-muted de">
+                      1/6 正常
+                    </div>
+                  </div>
+                </div><!--mediabody-->
+              </div> <!--media-->         
+              <hr>
+              <div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>                
+            </div><!--panelbody-->
+          </div><!--项目panel end-->
+        </div><!--col-md-5-->
+        <div class="col-md-4">
+        <!--文档 start-->
+         <div class="panel panel-default">
+          <div class="panel-heading">文档</div>
+          <div class="panel-body">
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <div class="card-layout">
+                  <p class="media-heading text-muted">产品策划文档2.0</p>
+                  主体是萌萌的风格，画面好看，游戏好玩...
+                  <div class="media-r-t text-muted">
+                    南山图图
+                  </div>
+                  <div class="media-r-b text-muted">
+                    10月17日
+                  </div>
+                </div>
+              </div>  <!--media body-->
+            </div>  <!--media-->
+            <hr>
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <div class="card-layout">
+                  <p class="media-heading text-muted">产品策划文档</p>
+                  主体是萌萌的风格，画面好看，游戏好玩...
+                  <div class="media-r-t text-muted">
+                    南山图图
+                  </div>
+                  <div class="media-r-b text-muted">
+                    10月17日
+                  </div>
+                </div>
+              </div>  <!--media body-->
+            </div> <!--media-->
+            <hr>  
+            <div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>                      
+          </div> <!--文档 panel body-->
+        </div>  <!--文档 panel end-->
+        <!--工时start-->
+        <div class="panel panel-default">
+          <div class="panel-heading">记事</div>
+          <div class="panel-body">
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object card-icon img-circle" src="res/img/tx.jpg" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <div class="card-layout">
+                  <p class="media-heading">整个项目期间必须严格遵守纪律。加强纪律性，革命无不胜。这句话在企业管理上同样起作用…
+                    <p>
+                      <div class="media-l-b text-muted">
+                        10月17日
+                      </div>
+                      <div class="media-r-b text-muted de">
+                        1/6 正常
+                      </div>
+                    </div>
+                  </div> <!--media-body-->
+                </div> <!--media-->
+                <hr>
+                <div class="media">
+                  <div class="media-left">
+                    <a href="#">
+                      <img class="media-object card-icon img-circle" src="res/img/tx.jpg" alt="...">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div class="card-layout">
+                      <p class="media-heading">
+                        整个项目期间必须严格遵守纪律。加强纪律性，革命无不胜。这句话在企业管理上同样起作用…
+                      </p>
+                      <div class="media-l-b text-muted">
+                        10月17日
+                      </div>
+                      <div class="media-r-b text-muted de">
+                        1/6 正常
+                      </div>
+                    </div>
+                  </div> <!--media-body-->
+                </div>  <!--media-->
+                <hr>
+                <div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>             
+              </div> <!--记事panel body-->
+            </div><!--记事panel end-->
+            <!--工时start-->
+            <div class="panel panel-default">
+              <div class="panel-heading">工时</div>
+              <div class="panel-body">
+                <div class="media">
+                  <div class="media-left">
+                    <a href="#">
+                      <img class="media-object card-icon img-circle" src="res/img/tx.jpg" alt="...">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div class="card-layout">
+                      <p class="media-heading text-muted">一棒打倒网络RPG游戏</p>
+                      设计PPT细化稿<span class="work-tag"><a href="">设计</a></span>
+                      <div class="media-r-t text-muted">
+                        8小时
+                      </div>
+                      <div class="media-r-b text-muted">
+                        10月17日
+                      </div>
+                    </div>
+                  </div><!--media-body-->
+                </div>  <!--media-->
+                <hr>
+                <div class="media">
+                  <div class="media-left">
+                    <a href="#">
+                      <img class="media-object card-icon img-circle" src="res/img/tx.jpg" alt="...">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <div class="card-layout">
+                      <p class="media-heading text-muted">一棒打倒网络RPG游戏</p>
+                      设计PPT细化稿<span class="work-tag"><a href="">设计</a></span>
+                      <div class="media-r-t text-muted">
+                        8小时
+                      </div>
+                      <div class="media-r-b text-muted">
+                        10月17日
+                      </div>
+                    </div>
+                  </div><!--media-body-->
+                </div> <!--media-->
+                <hr>
+                <div class="media-footer"><a href=""><span class="demo-icon">&#xe899;</span>进入</a></div>                   
+              </div><!--工时panel body-->
+            </div>  <!--工时panel end-->		
+          </div><!--col-md-4-->
+        </div>  	<!--row-->
+  </div><!--appmain container-->
+</div><!--appctrl controller-->
