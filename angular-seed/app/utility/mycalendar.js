@@ -180,8 +180,6 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 
 	$scope.changeCalendar = function(item){
 		switch($scope.itemType){
-			case 'dd':
-			break;
 			case 'mm':
 				$scope.itemType='dd';
 				setDayrows('dd');

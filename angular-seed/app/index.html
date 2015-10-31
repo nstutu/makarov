@@ -21,24 +21,48 @@
 </head>
 <body>
 
-  <div ng-controller="myController">
-    <brandbar></brandbar>
-  </div>
+
 
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+  <div id="sidebar" class="frame-main hide">
+    <ul>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li>
+    </ul>
+  </div>
+  <div id="frameMain" >
+     <div ng-controller="myController" id="webMenu" class="webMenu">
+        <brandbar></brandbar>
+    </div>
+    <div id="mobileMenu" class="mobileMenu">
+      <div class="container">
+        <div class="row mobileBanner">
+          <a href="">
+            <img alt="Brand" src="./res/img/band.png" style="margin-top:-6px;">
+          </a>
+          <button id="showMobileMenuBtn">ok</button>
+        </div>
+      </div>
+    </div>
 
-  <div ng-view></div>
+    <div ng-view></div>
 
-  <div ng-include="src='res/tpl/foot.html'"></div>
+    <div ng-include="src='res/tpl/foot.html'"></div>   
+  </div>
+
+
+
   <script src="res/jquery/jquery-1.11.3.min.js"></script>
   <script src="res/bootstrap/js/bootstrap.min.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>  
   <script src="app.js"></script>
+  <script src="frame.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
   <script src="user/user.js"></script>

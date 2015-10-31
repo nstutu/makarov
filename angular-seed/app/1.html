@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  	<script src="res/jquery/jquery-1.11.3.min.js"></script>	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#btn').click(function(){
+				$('#con').toggleClass('dh');
+				$('body').toggleClass('bodydh');
+				$('#sidebar').toggleClass('hide');
+			});
+		});
+
+	</script>
+	<style type="text/css">
+	    body,html{
+	    	margin:0;
+	    	padding: 0;
+	    }
+		.s1{
+			background-color: red;
+			position: absolute;
+			left: 0;
+			top:0;
+			bottom: 0;
+			width:250px;
+			z-index: 0;
+		}
+		.s1 ul li{
+			display: block;
+		}
+		.s2{
+			background-color: blue;
+			width: 100%;
+			height: 100vh;
+		}
+		.hide{
+			display: none;
+		}
+		.dh{
+			transition:transform 300ms ease;
+			transform: translateX(250px);
+		}
+		.bodydh{
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div id="sidebar" class="s1 hide">
+		<ul>
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+		</ul>
+	</div>
+	<div id="con" class="s2">
+		<button id="btn">ok</button>
+	</div>
+</body>
+</html>
