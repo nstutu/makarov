@@ -58,16 +58,18 @@ html,body{
   overflow: hidden;
 }
 .frame-menu{
-  transition:transform 0ms;
-  transform: translateX(250px);
+  -webkit-transition:-webkit-transform 0ms ease-in;
+  -webkit-transform: translateX(-200px);
+  transform: translateX(-200px);
+  z-index: 0;
 }
 .frame-sidebar{
   position: absolute;
   top: 0px;
   bottom: 0px;
-  left: 0px;
-  width: 250px;
-  z-index: 0;
+  right: 0px;
+  width: 200px;
+  z-index: 1;
   background-color: black;
 }
 .hide{
