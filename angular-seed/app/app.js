@@ -13,6 +13,29 @@ angular.module('myApp', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
 }])
+.controller('bodyCtrl', 
+	['$scope', 
+
+	function($scope){
+		var sidebarVal = 0;
+		$scope.bodycss='';
+		$scope.framecss='';
+		$scope.sidebarcss='hide';
+		$scope.toggleSideBar=function(){
+			sidebarVal = sidebarVal==1?0:1;
+			if(sidebarVal==0){
+				$scope.bodycss='';
+				$scope.framecss='';
+				$scope.sidebarcss='hide';
+			}
+			if(sidebarVal==1){
+				$scope.bodycss='frame-body';
+				$scope.framecss='frame-menu';
+				$scope.sidebarcss='';				
+			}
+		};
+	
+}])
 .controller('myController', 
 	['$scope',
 	'$window',

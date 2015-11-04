@@ -19,7 +19,7 @@
   <link href="favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon" /> 
   <link href="favicon.ico" mce_href="favicon.ico" rel="shortcut icon" type="image/x-icon" />  
 </head>
-<body>
+<body ng-controller="bodyCtrl" ng-class="bodycss">
 
 
 
@@ -27,14 +27,14 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <div id="sidebar" class="frame-main hide">
+  <div id="sidebar" class="frame-sidebar" ng-class="sidebarcss">
     <ul>
       <li>a</li>
       <li>b</li>
       <li>c</li>
     </ul>
   </div>
-  <div id="frameMain" >
+  <div id="frameMain" ng-class="framecss">
      <div ng-controller="myController" id="webMenu" class="webMenu">
         <brandbar></brandbar>
     </div>
@@ -44,13 +44,12 @@
           <a href="">
             <img alt="Brand" src="./res/img/band.png" style="margin-top:-6px;">
           </a>
-          <button id="showMobileMenuBtn">ok</button>
+          <button id="showMobileMenuBtn" ng-click="toggleSideBar()">ok</button>
         </div>
       </div>
     </div>
 
     <div ng-view></div>
-
     <div ng-include="src='res/tpl/foot.html'"></div>   
   </div>
 
@@ -60,9 +59,9 @@
   <script src="res/bootstrap/js/bootstrap.min.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
-  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>  
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
   <script src="app.js"></script>
-  <script src="frame.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
   <script src="user/user.js"></script>

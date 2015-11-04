@@ -61,7 +61,7 @@ html,body{
   transition:transform 0ms;
   transform: translateX(250px);
 }
-.frame-main{
+.frame-sidebar{
   position: absolute;
   top: 0px;
   bottom: 0px;
