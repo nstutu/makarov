@@ -21,17 +21,20 @@ config(['$routeProvider', function($routeProvider) {
 		$scope.bodycss='';
 		$scope.framecss='';
 		$scope.sidebarcss='hide';
+		$scope.containercss='';
 		$scope.toggleSideBar=function(){
 			sidebarVal = sidebarVal==1?0:1;
 			if(sidebarVal==0){
 				$scope.bodycss='';
 				$scope.framecss='';
 				$scope.sidebarcss='hide';
+				$scope.containercss='';
 			}
 			if(sidebarVal==1){
 				$scope.bodycss='frame-body';
 				$scope.framecss='frame-menu';
-				$scope.sidebarcss='';				
+				$scope.sidebarcss='';
+				$scope.containercss='frame-container';		
 			}
 		};
 	

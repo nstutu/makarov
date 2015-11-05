@@ -1,6 +1,6 @@
 <div ng-controller="appCtrl">
   <mynav></mynav>
-  <div class="container appmain">
+  <div class="container appmain" ng-class="containercss">
   	<div class="row">
   		<div class="col-md-3">
   			<div class="panel panel-default">
@@ -16,8 +16,8 @@
   		<div class="col-md-5">
   			<div class="panel panel-default" ng-controller="issueCtrl">
   				<div class="panel-heading dd">
-            <button class="btn btn-xs btn-info active btn-issue" ng-click="toggleIssue('issue')">事项</button>
-            <button class="btn btn-xs btn-info btn-sheet" ng-click="toggleIssue('sheet')">事项单</button>
+            <button class="btn btn-sm btn-info active btn-issue" ng-click="toggleIssue('issue')">事项</button>
+            <button class="btn btn-sm btn-info btn-sheet" ng-click="toggleIssue('sheet')">事项单</button>
           </div>
           <div class="panel-body">
             <div ng-show="issueShow">
@@ -111,8 +111,8 @@
         <!-- 计划 start-->
         <div class="panel panel-default">
           <div class="panel-heading">
-           <button class="btn btn-xs btn-info active btn-plan active" ng-click="toggleIssue('plan')">计划</button>
-           <button class="btn btn-xs btn-info btn-mile" ng-click="toggleIssue('mile')">￥里程碑</button>
+           <button class="btn btn-sm btn-info active btn-plan active" ng-click="toggleIssue('plan')">计划</button>
+           <button class="btn btn-sm btn-info btn-mile" ng-click="toggleIssue('mile')">￥里程碑</button>
           </div>
           <div class="panel-body">
            <div ng-show="planShow">

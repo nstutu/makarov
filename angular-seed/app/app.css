@@ -2,12 +2,21 @@
 html,body{
   background-color: #f5f8fa;
   color:#444444;
+  font-family: 'Microsoft Yahei', 'Hiragino Sans GB','Roboto','Heiti SC','Helvetica Neue';
+}
+
+
+@media (max-width: 991px){
+ html,body{
+    font-size: 12px;
+  } 
 }
 @media (min-width: 992px){
- html,body {
-    font-family: 'Microsoft Yahei';
-  }
+ html,body{
+    font-size: 14px;
+  } 
 }
+
 @font-face {
       font-family: 'fontello';
       src: url('./res/font/fontello.eot?22306947');
@@ -59,8 +68,8 @@ html,body{
 }
 .frame-menu{
   -webkit-transition:-webkit-transform 0ms ease-in;
-  -webkit-transform: translateX(-200px);
-  transform: translateX(-200px);
+  -webkit-transform: translateX(-250px);
+  transform: translateX(-250px);
   z-index: 0;
 }
 .frame-sidebar{
@@ -68,12 +77,15 @@ html,body{
   top: 0px;
   bottom: 0px;
   right: 0px;
-  width: 200px;
+  width: 250px;
   z-index: 1;
-  background-color: black;
+  background-color: rgba(96,96,96,1);
 }
 .hide{
   display: none !important;
+}
+.frame-container{
+  margin-right: 0;
 }
 @media (max-width: 991px){
  .webMenu {
@@ -85,10 +97,33 @@ html,body{
     display: none !important;
   } 
 }
-.mobileBanner{
-  height:42px;
+.mobileMenu{
   background-color: #3097d1;
-  padding:5px 15px;  
+  margin-bottom: 20px;  
+}
+.mobileBanner{
+  height:50px;
+  background-color: #3097d1;
+  padding:9px 15px;
+}
+.mobileBanner button{
+  position: relative;
+  border-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: transparent;
+  float: right;
+  margin-top: 6px;
+}
+.mobileBanner button .mobileMenuBar{
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #fff;
+}
+.mobileBanner button .mobileMenuBar + .mobileMenuBar{
+  margin-top: 4px;
 }
 .navbar-default{
   background-color: #3097d1;
@@ -256,7 +291,6 @@ div.dropdown-toggle{
   padding: 10px;
 }
 .footer{
-  font-size: 12px;
   margin-top: 100px;
   border-top: 1px solid #ddd;
   padding:0px 0px 50px;
@@ -342,7 +376,6 @@ div.dropdown-toggle{
 .mynav .dropdown .dropdown-menu{
   width:200px;
   background-color: #f5f5f5;
-  font-size: 12px;
   border-radius: 0px;
   padding-bottom: 0px;
   padding-top: 0px;
@@ -352,7 +385,6 @@ div.dropdown-toggle{
   margin: 0px; 
 }
 .mynav .dropdown .dropdown-menu .form-control{
-  font-size: 12px;
   padding: 3px 6px;
 }
 .mynav .dropdown .dropdown-menu>p{
@@ -363,7 +395,7 @@ div.dropdown-toggle{
   line-height: 0.8;
 }
 .mynav .dropdown .dropdown-menu .tab-pane div{
-  padding: 5px 0px;
+  padding: 5px 5px;
   margin: 0px;
   text-align: left;
   background: #fff;
@@ -447,7 +479,6 @@ div.dropdown-toggle{
   padding-right: 0px;
 }
 .appmain .row .col-md-5 .panel-body .media,.appmain .row .col-md-4 .panel-body .media{
-  font-size: 12px;
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -494,7 +525,6 @@ div.dropdown-toggle{
 .media-footer{
   padding-right: 15px;
   text-align: right;
-  font-size: 12px;
 }
 .media-footer a{
   text-decoration: none;
@@ -503,7 +533,6 @@ div.dropdown-toggle{
   margin: 0px;
   padding: 0px;
   border-top:1px solid #eee;
-  font-size: 12px;
 }
 
 .calendar-plan ul li div:first-child{
@@ -579,7 +608,6 @@ div.dropdown-toggle{
 }
 .calendar-title a{
   text-decoration: none;
-  font-size: 12px;
 }
 .calendar-title span a{
   font-size: 20px;

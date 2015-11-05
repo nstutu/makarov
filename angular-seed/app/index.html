@@ -39,12 +39,16 @@
         <brandbar></brandbar>
     </div>
     <div id="mobileMenu" class="mobileMenu">
-      <div class="container">
+      <div class="container" ng-class="containercss">
         <div class="row mobileBanner">
           <a href="">
-            <img alt="Brand" src="./res/img/band.png" style="margin-top:-6px;">
+            <img alt="Brand" src="./res/img/band.png" >
           </a>
-          <button id="showMobileMenuBtn" ng-click="toggleSideBar()">ok</button>
+          <button type="button" ng-click="toggleSideBar()">
+            <span class="mobileMenuBar"></span>
+            <span class="mobileMenuBar"></span>
+            <span class="mobileMenuBar"></span>
+          </button>
         </div>
       </div>
     </div>
