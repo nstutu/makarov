@@ -29,9 +29,30 @@
   <![endif]-->
   <div id="sidebar" class="frame-sidebar" ng-class="sidebarcss">
     <ul>
-      <li>a</li>
-      <li>b</li>
-      <li>c</li>
+      <div ng-if="islogin">
+        <li class="menuHeader">导航</li>
+        <li class="active"><a href="#/home"><span class="demo-icon">&#xe800;</span>Home</a></li>
+        <li>事项</li>
+        <li>计划</li>
+        <li>项目</li>
+        <li>文档</li>
+        <li>记事</li>
+        <li>工时</li>
+      </div>
+      <li class="menuHeader">文章</li>
+      <li>博客</li>
+      <li>帮助中心</li>
+      <div ng-if="islogin">
+        <li class="menuHeader" >用户</li>
+        <li>个人设置</li>
+        <li>增加协作者</li>
+        <li><a href="#/logout">注销</a></li>
+      </div>
+      <div ng-if="!islogin">
+        <li class="menuHeader" >用户</li>
+        <li><a href="#/reg" ng-click="toggleSideBar()"><span class="demo-icon">&#xe802;</span>注册</a></li>
+        <li><a href="#/login" ng-click="toggleSideBar()"><span class="demo-icon">&#xe85c;</span>登录</a></li>     
+      </div>
     </ul>
   </div>
   <div id="frameMain" ng-class="framecss">

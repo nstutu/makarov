@@ -15,8 +15,8 @@ config(['$routeProvider', function($routeProvider) {
 }])
 .controller('bodyCtrl', 
 	['$scope', 
-
-	function($scope){
+	 '$rootScope',
+	function($scope,$rootScope){
 		var sidebarVal = 0;
 		$scope.bodycss='';
 		$scope.framecss='';
@@ -37,6 +37,7 @@ config(['$routeProvider', function($routeProvider) {
 				$scope.containercss='frame-container';		
 			}
 		};
+		
 	
 }])
 .controller('myController', 
@@ -46,7 +47,6 @@ config(['$routeProvider', function($routeProvider) {
 	function($scope,$window,$location){
 		$scope.hidemenu=function(){
 			angular.element($('#bs-example-navbar-collapse-1')).collapse('hide');
-			console.log('aaaaaaa');
 		};
 }])
 .directive('brandbar',['$rootScope',function($rootScope){

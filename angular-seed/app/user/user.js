@@ -24,13 +24,10 @@ angular.module('myApp.user', ['ngRoute'])
 	$scope.mail=$routeParams.mail;
 	$scope.nick=$routeParams.nick;
 }])
-.controller('dologinCtrl', ['$scope','$log','checklogin','myreload', function($scope,$log,checklogin,myreload){
+.controller('dologinCtrl', ['$scope','checklogin','myreload', function($scope,checklogin,myreload){
 	$scope.dologin=function(){
-		$log.info($scope.mail);
-		$log.info($scope.pwd);
-		$log.info($scope.checkcode);
 		checklogin($scope.mail,$scope.pwd,$scope.checkcode);
-		myreload();
+		// myreload();
 	}
 	
 }])
@@ -49,9 +46,6 @@ angular.module('myApp.user', ['ngRoute'])
 })
 .factory('checklogin', ['$location',function($location){
 	return function(a,b,c){
-		console.log(a);
-		console.log(b);
-		console.log(c);
 		localStorage.a="ddddd";
 		$location.url("/home");
 	}
@@ -59,7 +53,7 @@ angular.module('myApp.user', ['ngRoute'])
 }])
 .factory('myreload', ['$window', function($window){
 	return function (){
-		$window.location='http://192.168.1.123:8080/app/index.html';
+		$window.location='http://192.168.1.152:8080/app/index.html';
 		$window.location.href();
 	};
 }])
