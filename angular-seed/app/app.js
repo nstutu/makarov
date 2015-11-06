@@ -42,23 +42,9 @@ config(['$routeProvider', function($routeProvider) {
 }])
 .controller('myController', 
 	['$scope',
-	'$window',
-	'$location', 
-	function($scope,$window,$location){
-		$scope.hidemenu=function(){
-			angular.element($('#bs-example-navbar-collapse-1')).collapse('hide');
-		};
-}])
-.directive('brandbar',['$rootScope',function($rootScope){
-	var url='user/notlogin.html';
-	if($rootScope.islogin){
-		url='user/login.html';
-	}
-	return {
-		restrict:'E',
-		templateUrl:url,
-		replace:true,
-	};
+
+	function($scope){
+
 }])
 .run(function($rootScope,isLogin){
 	$rootScope.islogin=isLogin.info;

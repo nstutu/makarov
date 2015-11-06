@@ -46,6 +46,7 @@
         <li class="menuHeader" >用户</li>
         <li>个人设置</li>
         <li>增加协作者</li>
+        <li>会员</li>
         <li><a href="#/logout">注销</a></li>
       </div>
       <div ng-if="!islogin">
@@ -57,7 +58,7 @@
   </div>
   <div id="frameMain" ng-class="framecss">
      <div ng-controller="myController" id="webMenu" class="webMenu">
-        <brandbar></brandbar>
+        <div ng-include="src='user/login.html'"></div>
     </div>
     <div id="mobileMenu" class="mobileMenu">
       <div class="container" ng-class="containercss">

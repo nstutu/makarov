@@ -13,12 +13,23 @@
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav ba">
+      <ul class="nav navbar-nav">
         <li><a href="#/home"><span class="demo-icon">&#xe800;</span>Home</a></li>
+        <li class="dropdown" ng-if="islogin">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">功能 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">事项</a></li>
+            <li><a href="#">计划</a></li>
+            <li><a href="#">项目</a></li>
+            <li><a href="#">文档</a></li>
+            <li><a href="#">记事</a></li>
+            <li><a href="#">工时</a></li>
+          </ul>
+        </li>
         <li><a href="#">博客</a></li>
         <li><a href="#">帮助中心</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right ba">
+      <ul class="nav navbar-nav navbar-right" ng-if="islogin">
         <li><a href="#"><span class="demo-icon" style="font-size:140%;">&#xe84e;</span></a></li>
         <li class="dropdown">
           <div  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -33,11 +44,15 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-right ba" role="search">
+      <form class="navbar-form navbar-right" role="search" ng-if="islogin">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="查询">
         </div>
       </form>
+      <ul class="nav navbar-nav navbar-right" ng-if="!islogin">
+        <li><a href="#/login" ><span class="demo-icon" >&#xe85c;</span>登录</a></li>
+        <li><a href="#/reg"  style="padding-left:0px;"><span class="demo-icon" >&#xe802;</span>注册</a></li>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

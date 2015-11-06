@@ -27,12 +27,13 @@ angular.module('myApp.user', ['ngRoute'])
 .controller('dologinCtrl', ['$scope','checklogin','myreload', function($scope,checklogin,myreload){
 	$scope.dologin=function(){
 		checklogin($scope.mail,$scope.pwd,$scope.checkcode);
-		// myreload();
+		myreload();
 	}
 	
 }])
-.controller('dologoutCtrl', ['myreload', function(myreload){
+.controller('dologoutCtrl', ['myreload','$location', function(myreload,$location){
 	localStorage.removeItem("a");
+	$location.url("/home");	
 	myreload();
 }])
 .factory('isLogin',  function(){
@@ -44,7 +45,7 @@ angular.module('myApp.user', ['ngRoute'])
 	}
 	return result;
 })
-.factory('checklogin', ['$location',function($location){
+.factory('checklogin', ['$location','$window',function($location,$window){
 	return function(a,b,c){
 		localStorage.a="ddddd";
 		$location.url("/home");
@@ -53,8 +54,7 @@ angular.module('myApp.user', ['ngRoute'])
 }])
 .factory('myreload', ['$window', function($window){
 	return function (){
-		$window.location='http://192.168.1.152:8080/app/index.html';
-		$window.location.href();
+		$window.location.reload();
 	};
 }])
 ;

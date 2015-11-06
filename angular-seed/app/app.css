@@ -177,6 +177,10 @@ html,body{
   color: #fff;
   background-color: transparent;
 }
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #555;
+    background-color: rgba(238,238,238,0.5);
+}
 .navbar {
 border-radius: 0px;
 }
@@ -325,15 +329,20 @@ div.dropdown-toggle{
   color: rgba(255, 255, 255, 0.8);
   background-color: #3097d1;
 }
+.footer ul{
+  text-align: center;
+  display: block;
+  padding: 0;
+}
+.footer ul li{
+  display: inline-block;
+}
 .footer .container{
   padding-top: 40px;
 }
 .footer .copyright{
   text-align: center;
   margin-top: 20px;
-}
-.footer strong{
-  color: #eee;
 }
 .footer a{
   color: rgba(255, 255, 255, 0.8);

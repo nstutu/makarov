@@ -56,7 +56,6 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 			var vm = f1curMonth-1;
 			var vy = f1curYear;
 			f1.setFullYear(vy,vm+m);
-			console.log(f1);
 			getCalendar();
 		}
 
