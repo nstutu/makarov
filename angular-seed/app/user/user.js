@@ -31,10 +31,10 @@ angular.module('myApp.user', ['ngRoute'])
 	}
 	
 }])
-.controller('dologoutCtrl', ['myreload','$location', function(myreload,$location){
+.controller('dologoutCtrl', ['myreload', function(myreload){
 	localStorage.removeItem("a");
-	$location.url("/home");	
 	myreload();
+
 }])
 .factory('isLogin',  function(){
 	var result = new Object;
@@ -48,12 +48,12 @@ angular.module('myApp.user', ['ngRoute'])
 .factory('checklogin', ['$location','$window',function($location,$window){
 	return function(a,b,c){
 		localStorage.a="ddddd";
-		$location.url("/home");
 	}
 
 }])
 .factory('myreload', ['$window', function($window){
 	return function (){
+		$window.location.href='#/home';	
 		$window.location.reload();
 	};
 }])
