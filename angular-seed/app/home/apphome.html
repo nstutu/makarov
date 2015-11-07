@@ -129,18 +129,6 @@
               <span class="demo-icon"><a href="" ng-click="changeItem(itemType,1)">&#xe885;</a></span>
             </div>
             <div class="calendar-plan">
-              <ul calendarType="{{itemType}}" ng-if="itemType=='dd'">
-                <div >
-  									<li>日</li><!--
-  									for li gap--><li>一</li><!--
-  									for li gap--><li>二</li><!--
-  									for li gap--><li>三</li><!--
-  									for li gap--><li>四</li><!--
-  									for li gap--><li>五</li><!--
-  									for li gap--><li>六</li><!--
-  									for li gap-->
-                  </div>
-                </ul>
                 <ul ng-repeat="dayrow in dayrows" calendarType="{{itemType}}">
                  <li  ng-repeat="item in items[dayrow]">
                   <div class="center-block" fulldate="{{item.f}}" fm="{{item.fm}}" cd="{{item.cd}}" ng-click="changeCalendar(item.f)">

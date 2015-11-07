@@ -21,7 +21,7 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 		var b = f1.getDay();
 		b=(b==0?7:b);
 		f1.setDate(-b+1);
-		for (var l = 0; l<6; l++) {
+		for (var l = 1; l<7; l++) {
 			for (var i = 0 ; i <=6 ; i++) {
 				var d = f1.getDate();
 				var m = f1.getMonth()+1;
@@ -80,7 +80,7 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 		var b=4;
 		switch(type){
 			case 'dd':
-				a=6;
+				a=7;
 				b=7;
 				break;
 			case 'mm':
@@ -94,6 +94,15 @@ controller('calCtrl', ['$scope', 'getMydate',function($scope,getMydate){
 				items[i][j]= new Array();
 			};			
 		};
+		if(type=='dd'){
+			items[0][0]={c:'日'};
+			items[0][1]={c:'一'};
+			items[0][2]={c:'二'};
+			items[0][3]={c:'三'};
+			items[0][4]={c:'四'};
+			items[0][5]={c:'五'};
+			items[0][6]={c:'六'};
+		}
 		return items;
 	}
 
