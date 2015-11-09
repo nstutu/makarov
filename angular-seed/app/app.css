@@ -143,6 +143,9 @@ html,body{
   float: right;
   margin-top: 6px;
 }
+.mobileBanner button:focus{
+  outline: none;
+}
 .mobileBanner button .mobileMenuBar{
   display: block;
   width: 22px;

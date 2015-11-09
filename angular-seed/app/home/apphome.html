@@ -1,5 +1,4 @@
 <div ng-controller="appCtrl">
-  <mynav></mynav>
   <div class="container appmain" ng-class="containercss">
   	<div class="row">
   		<div class="col-md-3">
@@ -14,7 +13,7 @@
   			</div>
   		</div><!--col-md-3-->
   		<div class="col-md-5">
-  			<div class="panel panel-default" ng-controller="issueCtrl">
+  			<div class="panel panel-default" >
   				<div class="panel-heading dd">
             <button class="btn btn-sm btn-info active btn-issue" ng-click="toggleIssue('issue')">事项</button>
             <button class="btn btn-sm btn-info btn-sheet" ng-click="toggleIssue('sheet')">事项单</button>
@@ -62,7 +61,7 @@
               </div>
               <hr>
               <div class="media-footer">
-                <a href=""><span class="demo-icon">&#xe899;</span>进入</a> &nbsp; 
+                <a href="#/issue"><span class="demo-icon">&#xe899;</span>进入</a> &nbsp; 
                 <a href=""><span class="demo-icon">&#xe895;</span>下一批</a>
               </div>  
             </div> 
@@ -139,8 +138,7 @@
               </ul>
             </div>
             <div class="media-footer">
-                <a href=""><span class="demo-icon">&#xe899;</span>进入</a> &nbsp; 
-                <a href=""><span class="demo-icon">&#xe895;</span>下一批</a>
+                <a href=""><span class="demo-icon">&#xe899;</span>进入</a>
             </div>
           </div><!--ngcontroller-->
         </div><!--ngshow-->
@@ -172,8 +170,7 @@
               </ul>
             </div>
             <div class="media-footer">
-                <a href=""><span class="demo-icon">&#xe899;</span>进入</a> &nbsp; 
-                <a href=""><span class="demo-icon">&#xe895;</span>下一批</a>
+                <a href=""><span class="demo-icon">&#xe899;</span>进入</a>
             </div>
           </div><!--ngcontroller-->
         </div><!--nghide-->

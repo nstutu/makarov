@@ -17,6 +17,11 @@ config(['$routeProvider', function($routeProvider) {
 	['$scope', 
 	 '$rootScope',
 	function($scope,$rootScope){
+		$scope.curProj="全部项目";
+		$scope.maxSize = 3;
+		$scope.bigCurrentPage = 1;
+		$scope.itemPerPage=10;
+		//上面是mynav的参数 
 		var sidebarVal = 0;
 		$scope.bodycss='';
 		$scope.framecss='';
@@ -37,6 +42,8 @@ config(['$routeProvider', function($routeProvider) {
 				$scope.containercss='frame-container';		
 			}
 		};
+
+
 		
 	
 }])
@@ -45,6 +52,29 @@ config(['$routeProvider', function($routeProvider) {
 
 	function($scope){
 
+}])
+.directive('mynav',['$http',function($http){
+	return {
+		restrict:'E',
+		templateUrl:'home/nav.html',
+		link:link
+	}
+	function link(scope,element,attr){
+		$http.get('res/json/proj.json').success(function(data){
+			scope.bigTotalItems = data.length;
+			if(scope.bigTotalItems>scope.itemPerPage){
+				scope.showpager=1;
+				scope.projects=data.slice(0,10);
+			}else{
+				scope.showpager=0;
+				scope.projects=data;
+			}
+			
+			scope.pageChanged = function() {
+				scope.projects=data.slice(scope.bigCurrentPage*10-10,scope.bigCurrentPage*10);
+  			};
+		});		
+	}
 }])
 .run(function($rootScope,isLogin){
 	$rootScope.islogin=isLogin.info;
