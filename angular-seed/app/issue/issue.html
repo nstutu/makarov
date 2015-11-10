@@ -1,57 +1,71 @@
 <div ng-controller="issueCtrl">	
-<div class="container">
+	<div class="container issue">
 	<div class="row">
-  			<div class="panel panel-default" >
-		  <div class="panel-heading dd">
-            事项列表
-          </div>
-          <div class="panel-body">
-              <div class="media">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <div class="card-layout">
-                    <p class="media-heading text-muted">这里是事项单的名字</p>
-                    网络游戏的时候有没有人数限制的讨论案网络游戏的时候有没有人数限制的讨论案
-                    <div class="media-r-t text-muted">
-                      老马卡
-                    </div>
-                    <div class="media-r-b text-muted">
-                      10月17日
-                    </div>
-                  </div>
-                </div>
-              </div>  
-              <hr> 
-              <div class="media">
-                <div class="media-left">
-                  <a href="#">
-                    <img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
-                  </a>
-                </div>
-                <div class="media-body">
-                  <div class="card-layout">
-                    <p class="media-heading text-muted">这里是事项单的名字</p>
-                    网络游戏的时候有没有人数限制的讨论案网络游戏的时候有没有人数限制的讨论案
-                    <div class="media-r-t text-muted">
-                      老马卡
-                    </div>
-                    <div class="media-r-b text-muted">
-                      10月17日
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr>
-              <div class="media-footer">
-                <a href="#/issue"><span class="demo-icon">&#xe899;</span>进入</a> &nbsp; 
-                <a href=""><span class="demo-icon">&#xe895;</span>下一批</a>
-              </div>  
-          </div><!--panel body-->
-        </div><!--panel-->
-</div>
-</div>
+			<div class="panel panel-default" >
+				<div class="panel-heading dd">
+					事项列表 
+<!-- 					<div class="btn-group pull-right">
+						<a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							···<span class="demo-icon">&#xe864;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</div> 后面用留着-->
+					<div class="pull-right">
+						筛选<span class="demo-icon">&#xe864;</span>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="media">
+						<div class="media-left">
+							<a href="#">
+								<img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+							</a>
+						</div>
+						<div class="media-body">
+							<div class="card-layout">
+								<p class="media-heading text-muted">这里是事项单的名字</p>
+								<a ng-click="gotoAnchor('issuea')">网络游戏的时候有没有人数限制的讨论案网络游戏的时候有没有人数限制的讨论案</a>
+								<div class="media-r-t text-muted">
+									老马卡
+								</div>
+								<div class="media-r-b text-muted">
+									10月17日
+								</div>
+							</div>
+						</div>
+					</div>  
+					<hr> 
+					<div class="media">
+						<div class="media-left">
+							<a href="#">
+								<img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+							</a>
+						</div>
+						<div class="media-body">
+							<div class="card-layout">
+								<p class="media-heading text-muted">这里是事项单的名字</p>
+								<a id="issuea">网络游戏的时候有没有人数限制的讨论案网络游戏的时候有没有人数限制的讨论案</a>
+								<div class="media-r-t text-muted">
+									老马卡
+								</div>
+								<div class="media-r-b text-muted">
+									10月17日
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="media-footer">
+						<a href=""><span class="demo-icon">&#xe895;</span>下一批</a>
+					</div>  
+				</div><!--panel body-->
+			</div><!--panel-->
+		</div>
+	</div>
 </div>

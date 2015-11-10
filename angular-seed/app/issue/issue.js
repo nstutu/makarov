@@ -8,6 +8,11 @@ angular.module('myApp.issue', ['ngRoute'])
 		controller: 'issueCtrl'
 	});
 }])
-.controller('issueCtrl', ['$scope', function($scope){
+.controller('issueCtrl', ['$scope','$location','$anchorScroll', function($scope,$location,$anchorScroll){
 	$scope.abc='abc';
+
+	$scope.gotoAnchor= function(anchor){
+		$location.hash(anchor);
+		$anchorScroll();
+	}
 }])

@@ -89,7 +89,7 @@ html,body{
 }
 .frame-sidebar ul li{
   display: block;
-  padding: 5px 0px 5px 40px;
+  padding: 3px 0px 3px 40px;
   color: rgba(245,245,245,0.7);
   cursor: pointer;
   border-left: 3px solid transparent;
@@ -129,6 +129,10 @@ html,body{
   background-color: #3097d1;
   margin-bottom: 20px;  
 }
+.mobileMenu .row{
+  margin-left: 0;
+  margin-right: 0;
+}
 .mobileBanner{
   height:50px;
   background-color: #3097d1;
@@ -155,6 +159,19 @@ html,body{
 }
 .mobileBanner button .mobileMenuBar + .mobileMenuBar{
   margin-top: 4px;
+}
+@media (max-width: 991px){
+ .container{
+  padding-left: 5px;
+  padding-right: 5px;
+} 
+}
+
+@media (max-width: 991px){
+  .col-md-3,.col-md-4,.col-md-5{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 .navbar-default{
   background-color: #3097d1;
@@ -332,6 +349,10 @@ div.dropdown-toggle{
   color: rgba(255, 255, 255, 0.8);
   background-color: #3097d1;
 }
+.footer .row{
+  margin-left: 0;
+  margin-right: 0;
+}
 .footer ul{
   text-align: center;
   display: block;
@@ -485,8 +506,18 @@ div.dropdown-toggle{
   background-color: #eee;
   border-color: #dcdcdc;
 }
+.panel a{
+  color: inherit;
+  cursor: pointer;
+}
 .appmain{
   margin-top: 20px;
+}
+@media (max-width: 991px){
+  .appmain .row{
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 .appmain .row .panel .panel-heading{
   background-color: #fff;
@@ -506,7 +537,7 @@ div.dropdown-toggle{
     margin-bottom: 10px;
 }
 .appmain .row .col-md-5 .panel-heading,.appmain .row .col-md-4 .panel-heading{
-  padding: 12px 15px;
+  padding: 12px 10px;
   color: #009966;
   font-weight: bold;
 }
@@ -519,8 +550,8 @@ div.dropdown-toggle{
   padding-right: 0px;
 }
 .appmain .row .col-md-5 .panel-body .media,.appmain .row .col-md-4 .panel-body .media{
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .media .media-left .card-icon{
   width: 32px;
@@ -653,5 +684,22 @@ div.dropdown-toggle{
   font-size: 20px;
   vertical-align: text-bottom;
 }
-
+.issue .row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.issue .row .panel{
+  margin-top: 20px;
+}
+.issue .row .panel-heading{
+  background-color: #fff;
+}
+.issue .row .panel-body{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.issue .row .media{
+  padding-left: 10px;
+  padding-right: 10px;
+}
 

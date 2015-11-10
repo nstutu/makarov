@@ -43,6 +43,12 @@ config(['$routeProvider', function($routeProvider) {
 			}
 		};
 
+		$scope.closeSideBar=function(){
+			if(sidebarVal==1){
+				$scope.toggleSideBar();
+			}
+		}
+
 
 		
 	

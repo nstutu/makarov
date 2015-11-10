@@ -32,7 +32,7 @@
       <div ng-if="islogin">
         <li class="menuHeader">导航</li>
         <li class="active"><a href="#/home"><span class="demo-icon">&#xe800;</span>Home</a></li>
-        <li>事项</li>
+        <li><a href="#/issue" ng-click="toggleSideBar()">事项</a></li>
         <li>计划</li>
         <li>项目</li>
         <li>文档</li>
@@ -56,7 +56,7 @@
       </div>
     </ul>
   </div>
-  <div id="frameMain" ng-class="framecss">
+  <div id="frameMain" ng-class="framecss" ng-mousedown="closeSideBar()">
      <div ng-controller="myController" id="webMenu" class="webMenu">
         <div ng-include="src='user/login.html'"></div>
     </div>
