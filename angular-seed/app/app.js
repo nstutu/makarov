@@ -9,6 +9,8 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.issue',
   'myApp.mycalendar',
+  'ui.select',
+  'ngSanitize'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});

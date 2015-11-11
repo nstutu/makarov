@@ -77,13 +77,14 @@
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal">
-					<ui-select ng-model="person.selected" theme="bootstrap">
-						<ui-select-match placeholder="Select or search a person in the list...">{{$select.selected.name}}</ui-select-match>
-						<ui-select-choices repeat="item in people | filter: $select.search">
-							<div ng-bind-html="item.name | highlight: $select.search"></div>
-							<small ng-bind-html="item.email | highlight: $select.search"></small>
-						</ui-select-choices>
-					</ui-select>
+						<ui-select ng-model="selectedItem">
+							<ui-select-match>
+								<span ng-bind="$select.selected.name"></span>
+							</ui-select-match>
+							<ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
+								<span ng-bind="item.name"></span>
+							</ui-select-choices>
+						</ui-select>
 					</form>
 				</div>
 				<div class="modal-footer">
