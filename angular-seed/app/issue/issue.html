@@ -17,7 +17,7 @@
 						</ul>
 					</div> 后面用留着-->
 					<div class="pull-right">
-						筛选<span class="demo-icon">&#xe864;</span>
+						<a href="" data-toggle="modal" data-target="#filterModal">筛选<span class="demo-icon">&#xe864;</span></a>
 					</div>
 				</div>
 				<div class="panel-body">
@@ -66,6 +66,31 @@
 					</div>  
 				</div><!--panel body-->
 			</div><!--panel-->
-		</div>
-	</div>
-</div>
+		</div><!--row-->
+	</div><!--container-->
+	<div class="modal fade" id="filterModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal">
+					<ui-select ng-model="person.selected" theme="bootstrap">
+						<ui-select-match placeholder="Select or search a person in the list...">{{$select.selected.name}}</ui-select-match>
+						<ui-select-choices repeat="item in people | filter: $select.search">
+							<div ng-bind-html="item.name | highlight: $select.search"></div>
+							<small ng-bind-html="item.email | highlight: $select.search"></small>
+						</ui-select-choices>
+					</ui-select>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+</div><!--ng-controller->

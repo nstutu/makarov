@@ -8,12 +8,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
   <meta name="renderer" content="webkit">
-  <meta name="description" content="多项目管理工具,支持手机\电脑\平板多终端,快捷好用!">
-  <title>Makarov(马卡洛夫)-多项目管理工具</title>  
+  <meta name="description" content="基于项目管理的团队协作WebApp,支持手机\电脑\平板多终端,快捷好用!">
+  <title>Makarov(马卡洛夫)-基于项目管理的团队协作WebApp</title>  
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="res/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="bower_components/ui-select/dist/select.css">  
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <link href="favicon.ico" mce_href="favicon.ico" rel="bookmark" type="image/x-icon" /> 
   <link href="favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon" /> 
@@ -27,6 +28,19 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+  <!--
+    IE8 support, see AngularJS Internet Explorer Compatibility http://docs.angularjs.org/guide/ie
+    For Firefox 3.6, you will also need to include jQuery and ECMAScript 5 shim
+  -->
+  <!--[if lt IE 9]>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.js"></script>
+    <script>
+      document.createElement('ui-select');
+      document.createElement('ui-select-match');
+      document.createElement('ui-select-choices');
+    </script>
+  <![endif]-->  
   <div id="sidebar" class="frame-sidebar" ng-class="sidebarcss">
     <ul>
       <div ng-if="islogin">
@@ -96,5 +110,7 @@
   <script src="model/project.js"></script>
   <script src="issue/issue.js"></script>
   <script src="utility/mycalendar.js"></script>
+  <script src="bower_components/ui-select/dist/select.js"></script>
+  
 </body>
 </html>
