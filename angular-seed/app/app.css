@@ -97,7 +97,7 @@ html,body{
 }
 .frame-sidebar ul li a{
   color: inherit;
-  text-decoration: none;
+  /*text-decoration: none;*/
 }
 .frame-sidebar ul .menuHeader{
   color: rgba(240,240,240,0.4);
@@ -345,9 +345,9 @@ div.dropdown-toggle{
 .footer{
   margin-top: 100px;
   border-top: 1px solid #ddd;
-  padding:0px 0px 50px;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: #3097d1;
+  padding:0;
+  /*color: rgba(255, 255, 255, 0.8);*/
+  /*background-color: #3097d1;*/
 }
 .footer .row{
   margin-left: 0;
@@ -357,20 +357,19 @@ div.dropdown-toggle{
   text-align: center;
   display: block;
   padding: 0;
+  margin-bottom: 5px;
 }
 .footer ul li{
   display: inline-block;
 }
 .footer .container{
-  padding-top: 40px;
+  padding-top: 5px;
 }
 .footer .copyright{
   text-align: center;
   margin-top: 20px;
 }
-.footer a{
-  color: rgba(255, 255, 255, 0.8);
-}
+
 .regContent{
   margin-top: 50px;
   margin-bottom: 300px;
@@ -510,6 +509,9 @@ div.dropdown-toggle{
   color: inherit;
   cursor: pointer;
 }
+.panel .text-muted{
+  color:rgba(0,0,0,0.3);
+}
 .appmain{
   margin-top: 20px;
 }
@@ -552,6 +554,9 @@ div.dropdown-toggle{
 .appmain .row .col-md-5 .panel-body .media,.appmain .row .col-md-4 .panel-body .media{
   margin-left: 10px;
   margin-right: 10px;
+}
+.media-left, .media>.pull-left {
+  padding-top: 10px;
 }
 .media .media-left .card-icon{
   width: 32px;
@@ -693,6 +698,12 @@ div.dropdown-toggle{
 }
 .issue .row .panel-heading{
   background-color: #fff;
+  line-height: 30px;
+}
+.issue .row .panel-heading .df{
+  clear:both;
+  display: inline-block;
+  height: 30px;
 }
 .issue .row .panel-body{
   padding-left: 0px;
