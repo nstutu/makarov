@@ -51,6 +51,10 @@ config(['$routeProvider', function($routeProvider) {
 				$scope.toggleSideBar();
 			}
 		}
+		$scope.cleanmynav = function(){
+			$rootScope.mynav.isnav=0;
+		}
+		$rootScope.mynav.isnav=0;
 
 
 		
@@ -91,5 +95,9 @@ config(['$routeProvider', function($routeProvider) {
 		$rootScope.nickname=isLogin.data.nickname;
 		$rootScope.regdate=isLogin.data.regdate;
 	}
+	$rootScope.mynav = new Object();
+	$rootScope.mynav.isnav=0;
+	$rootScope.mynav.nav='';
+	$rootScope.mynav.url='';
 });
 

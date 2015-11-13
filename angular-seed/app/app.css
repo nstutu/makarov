@@ -13,7 +13,7 @@ html,body{
 }
 @media (min-width: 992px){
  html,body{
-    font-size: 14px;
+    font-size: 15px;
   } 
 }
 
@@ -424,6 +424,7 @@ div.dropdown-toggle{
 .mynav .container .row{
   margin-left: 0px;
   margin-right: 0px;
+  position: relative;
 }
 .mynav .dropdown .dropdown-menu form{
   padding: 5px 10px 0px;
@@ -471,6 +472,13 @@ div.dropdown-toggle{
 .mynav .dropdown .dropdown-menu .tab-pane div:hover a{
   color: #fff;
 }
+.mynav .row .mynav-nav{
+  float: right;
+  position: absolute;
+  right: 5px;
+  top:6px;
+  font-size: 12px;
+}
 .btn-default:active:hover,
 .btn-default.active:hover,
 .open > .dropdown-toggle.btn-default:hover,
@@ -506,7 +514,6 @@ div.dropdown-toggle{
   border-color: #dcdcdc;
 }
 .panel a{
-  color: inherit;
   cursor: pointer;
 }
 .panel .text-muted{
@@ -543,10 +550,6 @@ div.dropdown-toggle{
   color: #009966;
   font-weight: bold;
 }
-.appmain .row .col-md-5 .dd a,.appmain .row .col-md-4 .dd a{
-  text-decoration: none;
-  font-weight: bold;
-}
 .appmain .row .col-md-5 .panel-body,.appmain .row .col-md-4 .panel-body{
   padding-left: 0px;
   padding-right: 0px;
@@ -556,7 +559,7 @@ div.dropdown-toggle{
   margin-right: 10px;
 }
 .media-left, .media>.pull-left {
-  padding-top: 10px;
+  padding-top: 8px;
 }
 .media .media-left .card-icon{
   width: 32px;
@@ -592,6 +595,11 @@ div.dropdown-toggle{
 }
 .media .media-r-b{
   text-align: right;
+}
+.media .media-oper{
+  position: absolute;
+  left:0;
+  bottom: 0;
 }
 .media .de{
   position: absolute;

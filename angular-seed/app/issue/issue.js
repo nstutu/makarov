@@ -6,10 +6,14 @@ angular.module('myApp.issue', ['ngRoute'])
 	$routeProvider.when('/issue', {
 		templateUrl: 'issue/issue.html',
 		controller: 'issueCtrl'
-	});
+	})
+	.when('/issueedit',{
+		templateUrl: 'issue/issueedit.html',
+		controller: 'issueeditCtrl'		
+	})
 }])
 .controller('issueCtrl', ['$scope','$location','$anchorScroll', function($scope,$location,$anchorScroll){
-	$scope.abc='abc';
+
 
 	$scope.gotoAnchor= function(anchor){
 		$location.hash(anchor);
@@ -50,4 +54,10 @@ angular.module('myApp.issue', ['ngRoute'])
 
 	$scope.selectedItem3= $scope.itemArray3[0];	
 
+}])
+.controller('issueeditCtrl', ['$scope','$rootScope', function($scope,$rootScope){
+
+	$rootScope.mynav.isnav=1;
+	$rootScope.mynav.nav='事项单';
+	$rootScope.mynav.url='#/issuesheet';
 }])

@@ -1,43 +1,39 @@
-<div ng-controller="issuesheetCtrl">	
+<div ng-controller="issueeditCtrl">	
 	<div class="container issue">
 	<div class="row">
 			<div class="panel panel-default" >
-				<div class="panel-heading">
-					事项单
-<!-- 					<div class="btn-group pull-right">
+				<div class="panel-heading dd">
+					这里是事项单的名字(无迭代)
+ 					<div class="btn-group pull-right">
 						<a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							···<span class="demo-icon">&#xe864;</span>
+							·····
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Separated link</a></li>
+							<li><a href="#"><span class="demo-icon">&#xe801;</span>新增</a></li>
+							<li><a href="#"><span class="demo-icon">&#xe896;</span>迭代</a></li>
+							<li><a href="#"><span class="demo-icon">&#xe81c;</span>回溯</a></li>
+							<li><a href="#">筛选</a></li>
 						</ul>
-					</div> 后面用留着-->
-					<a href="" data-toggle="modal" data-target="#addIssueSheet"class="pull-right" >新增<span class="demo-icon">&#xe801;</span></a>
+					</div> 
 				</div>
 				<div class="panel-body">
 					<div class="media">
 						<div class="media-left">
 							<a href="#">
-								<img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+								<img class="media-object card-icon img-circle" src="res/img/tx.jpg" alt="...">
 							</a>
 						</div>
 						<div class="media-body">
 							<div class="card-layout">
-								<p class="media-heading text-muted">老马卡</p>
-								<p><a href="#/issueedit">方案讨论(迭代1)</a></p>
+								<p class="media-heading text-muted">10月17日</p>
+								<p>网络游戏的时候有没有人数限制的讨论案网络游戏的时候有没有人数限制的讨论案</p>
 								<div class="media-r-t text-muted">
-									56/67
+									进行中
 								</div>
-								<div class="media-r-b">
+								<div class="media-r-b text-muted">
 									<span class="demo-icon"><a href="">&#xe836;</a></span>
-									<span class="demo-icon"><a href="">&#xe844;</a></span>
-								</div>
-								<div class="media-oper text-muted">
-									10月17日
+									<span class="demo-icon"><a href="">&#xe844;</a></span>									
+									<span class="demo-icon"><a href="">&#xe815;</a></span>									
 								</div>
 							</div>
 						</div>
@@ -46,26 +42,24 @@
 					<div class="media">
 						<div class="media-left">
 							<a href="#">
-								<img class="media-object card-icon img-circle" src="res/img/projtx.jpg" alt="...">
+								<img class="media-object card-icon img-circle" src="res/img/tx.jpg" alt="...">
 							</a>
 						</div>
 						<div class="media-body">
 							<div class="card-layout">
-								<p class="media-heading text-muted">老马卡</p>
-								<p><a href="#/issueedit">方案讨论(迭代1)</a></p>
+								<p class="media-heading text-muted">10月17日</p>
+								<p class="text-muted">网络游戏的时候有没有人数限制的讨论案网络游戏的时候有没有人数限制的讨论案</p>
 								<div class="media-r-t text-muted">
-									56/67
+									已完成
 								</div>
 								<div class="media-r-b text-muted">
 									<span class="demo-icon"><a href="">&#xe836;</a></span>
-									<span class="demo-icon"><a href="">&#xe844;</a></span>							
-								</div>
-								<div class="media-oper text-muted">
-									10月17日
+									<span class="demo-icon"><a href="">&#xe844;</a></span>									
+									<span class="demo-icon"><a href="">&#xe89c;</a></span>									
 								</div>
 							</div>
 						</div>
-					</div> 
+					</div>
 					<hr>
 					<div class="media-footer">
 						<a href=""><span class="demo-icon">&#xe895;</span>下一批</a>
@@ -74,7 +68,7 @@
 			</div><!--panel-->
 		</div><!--row-->
 	</div><!--container-->
-	<div class="modal fade" id="addIssueSheet">
+	<div class="modal fade" id="filterModal">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
