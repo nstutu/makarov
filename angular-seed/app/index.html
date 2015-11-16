@@ -44,14 +44,20 @@
   <div id="sidebar" class="frame-sidebar" ng-class="sidebarcss">
     <ul>
       <div ng-if="islogin">
+        <li>
+          <form role="search">
+              <input type="text" class="form-control" placeholder="查询">
+          </form>
+        </li>
         <li class="menuHeader">导航</li>
         <li class="active"><a href="#/home" ng-click="toggleSideBar()"><span class="demo-icon">&#xe800;</span>Home</a></li>
         <li><a href="#/issue" ng-click="toggleSideBar()">事项</a></li>
-        <li>计划</li>
+        <li><a href="#/plan" ng-click="toggleSideBar()">计划</a></li>
         <li>项目</li>
         <li>文档</li>
         <li>记事</li>
         <li>工时</li>
+        <li>简报</li>
       </div>
       <li class="menuHeader">文章</li>
       <li>博客</li>
@@ -78,7 +84,7 @@
     <div id="mobileMenu" class="mobileMenu">
       <div class="container" ng-class="containercss">
         <div class="row mobileBanner">
-          <a href="">
+          <a href="#/home">
             <img alt="Brand" src="./res/img/band.png" >
           </a>
           <button type="button" ng-click="toggleSideBar()">
@@ -114,6 +120,7 @@
   <script src="utility/mycalendar.js"></script>
   <script src="bower_components/ui-select/dist/select.min.js"></script>
   <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-  
+  <script src="plan/plan.js"></script>
+  <script src="plan/plantemplate.js"></script>
 </body>
 </html>

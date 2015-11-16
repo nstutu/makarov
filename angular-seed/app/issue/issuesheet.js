@@ -7,10 +7,11 @@ angular.module('myApp.issuesheet', ['ngRoute'])
 		controller: 'issuesheetCtrl'
 	});
 }])
-.controller('issuesheetCtrl', ['$scope','$location','$rootScope', function($scope,$location,$rootScope){
+.controller('issuesheetCtrl', ['$scope','$location', function($scope,$location){
 	$scope.gotoIssue = function(){
 		$location.url('/issue');
 	}
 
-	$rootScope.mynav.isnav=0;
+	
+
 }])

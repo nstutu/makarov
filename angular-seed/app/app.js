@@ -11,15 +11,16 @@ angular.module('myApp', [
   'myApp.issuesheet',
   'myApp.mycalendar',
   'ui.select',
-  'ngSanitize'
+  'ngSanitize',
+  'myApp.plan',
+  'myApp.plantemplate',
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
 }])
 .controller('bodyCtrl', 
 	['$scope', 
-	 '$rootScope',
-	function($scope,$rootScope){
+	function($scope){
 		$scope.curProj="全部项目";
 		$scope.maxSize = 3;
 		$scope.bigCurrentPage = 1;
@@ -51,28 +52,22 @@ config(['$routeProvider', function($routeProvider) {
 				$scope.toggleSideBar();
 			}
 		}
-		$scope.cleanmynav = function(){
-			$rootScope.mynav.isnav=0;
-		}
-		$rootScope.mynav.isnav=0;
-
-
-		
-	
 }])
 .controller('myController', 
 	['$scope',
+	'$location',
 
-	function($scope){
+	function($scope,$location){
 
 }])
-.directive('mynav',['$http',function($http){
+.directive('mynav',['$http','$location',function($http,$location){
 	return {
 		restrict:'E',
 		templateUrl:'home/nav.html',
 		link:link
 	}
 	function link(scope,element,attr){
+		// 获取项目JSON数据
 		$http.get('res/json/proj.json').success(function(data){
 			scope.bigTotalItems = data.length;
 			if(scope.bigTotalItems>scope.itemPerPage){
@@ -95,9 +90,6 @@ config(['$routeProvider', function($routeProvider) {
 		$rootScope.nickname=isLogin.data.nickname;
 		$rootScope.regdate=isLogin.data.regdate;
 	}
-	$rootScope.mynav = new Object();
-	$rootScope.mynav.isnav=0;
-	$rootScope.mynav.nav='';
-	$rootScope.mynav.url='';
+
 });
 

@@ -55,9 +55,6 @@ angular.module('myApp.issue', ['ngRoute'])
 	$scope.selectedItem3= $scope.itemArray3[0];	
 
 }])
-.controller('issueeditCtrl', ['$scope','$rootScope', function($scope,$rootScope){
+.controller('issueeditCtrl', ['$scope', function($scope){
 
-	$rootScope.mynav.isnav=1;
-	$rootScope.mynav.nav='事项单';
-	$rootScope.mynav.url='#/issuesheet';
 }])

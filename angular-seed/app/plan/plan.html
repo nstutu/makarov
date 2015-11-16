@@ -1,24 +1,19 @@
-<div ng-controller="issueCtrl">	
+<div ng-controller="planCtrl">	
 	<div class="container issue">
 	<div class="row">
 			<div class="panel panel-default" >
-				<div class="panel-heading dd">
-					事项列表
-<!-- 					<div class="btn-group pull-right">
+				<div class="panel-heading">
+					计划列表
+ 					<div class="btn-group pull-right df">
 						<a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							···<span class="demo-icon">&#xe864;</span>
+							<span class="demo-icon dc">&#xe801;</span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Separated link</a></li>
+							<li><a href="#">新增</a></li>
+							<li><a href="#">历史版本</a></li>
 						</ul>
-					</div> 后面用留着-->
-					<a href="" data-toggle="modal" data-target="#filterModal"class="pull-right" >筛选<span class="demo-icon">&#xe864;</span></a>
-					<span class="pull-right">&nbsp;&nbsp;</span>
-					<button type="button" class="btn btn-xs btn-info pull-right dd" ng-click="gotoIssueSheet()">事项单</button>
+					</div>
+					<button type="button" class="btn btn-xs btn-info pull-right dd" ng-click="gotoPlanTemplate()">计划模板</button>
 				</div>
 				<div class="panel-body">
 					<div class="media">
@@ -29,14 +24,16 @@
 						</div>
 						<div class="media-body">
 							<div class="card-layout">
-								<p class="media-heading text-muted">这里是事项单的名字</p>
-								<a ng-click="gotoAnchor('issuea')">网络游戏的时候有没有人数限制的讨论案网络游戏的时候有没有人数限制的讨论案</a>
-								<div class="media-r-t text-muted">
-									老马卡
+								<p class="media-heading text-muted">南山图图</p>
+								<a ng-click="gotoAnchor('issuea')">主项计划V1.0</a>
+								<div class="media-r-t">
+									<a href="">￥里程碑</a>
 								</div>
 								<div class="media-r-b text-muted">
-									10月17日
+									<span class="demo-icon"><a href="">&#xe836;</a></span>
+									<span class="demo-icon"><a href="">&#xe844;</a></span>
 								</div>
+								<div class="media-oper text-muted">11月16日</div>
 							</div>
 						</div>
 					</div>  
@@ -49,14 +46,16 @@
 						</div>
 						<div class="media-body">
 							<div class="card-layout">
-								<p class="media-heading text-muted">这里是事项单的名字</p>
-								<a id="issuea">网络游戏的时候有没有人数限制的讨论案网络游戏的时候有没有人数限制的讨论案</a>
-								<div class="media-r-t text-muted">
-									老马卡
+								<p class="media-heading text-muted">南山图图</p>
+								<a ng-click="gotoAnchor('issuea')">工程量计划V1.0</a>
+								<div class="media-r-t">
+									<a href=""></a>
 								</div>
 								<div class="media-r-b text-muted">
-									10月17日
+									<span class="demo-icon"><a href="">&#xe836;</a></span>
+									<span class="demo-icon"><a href="">&#xe844;</a></span>
 								</div>
+								<div class="media-oper text-muted">11月16日</div>
 							</div>
 						</div>
 					</div>
