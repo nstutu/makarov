@@ -23,8 +23,6 @@ angular.module('myApp.plan', ['ngRoute'])
 	$scope.gotoPlanTemplate = function(){
 		$location.url('/plantemplate');
 	}
-
-
 }])
 .controller('planeditCtrl', ['$scope', function($scope){
 

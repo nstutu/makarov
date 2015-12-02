@@ -571,7 +571,6 @@ div.dropdown-toggle{
 
 .media .media-body .card-layout{
   position: relative;
-
 }
 .media .media-heading{
   text-align: justify;
@@ -589,7 +588,7 @@ div.dropdown-toggle{
 }
 .media .media-r-t{
   position: absolute;
-  top:0px;
+  bottom:20px;
   right:0px;
 }
 .media .media-r-b{
@@ -605,6 +604,16 @@ div.dropdown-toggle{
   bottom:0px;
   right: 0px;
 }
+.media .dg{
+  padding-top: 0px;
+  padding-right: 5px;
+}
+.media .dh{
+  margin-top: -10px;
+  position: relative;
+  right: 0;
+  bottom: 0;
+}
 .media-footer{
   padding-right: 15px;
   text-align: right;
@@ -617,7 +626,6 @@ div.dropdown-toggle{
   padding: 0px;
   border-top:1px solid #eee;
 }
-
 .calendar-plan ul li div:first-child{
   font-size: 14px;
   padding-bottom: 5px;
